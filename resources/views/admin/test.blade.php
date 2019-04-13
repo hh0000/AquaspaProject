@@ -3,11 +3,11 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Test</h1>
+    <h1>Reportes</h1>
 @stop
 
 @section('content')
 
 
-    <p>You are logged in!</p>
+    <p>Ingrese los datos solicitados para buscar registros.</p>
 @stop

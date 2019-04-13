@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'Novasoft',
 
     'title_prefix' => '',
 
@@ -110,7 +110,7 @@ return [
     'menu' => [
         'MAIN NAVIGATION',
         [
-            'text' => 'test',
+            'text' => 'Reportes',
             'url'  => 'test',
             'icon' => 'home',
             
