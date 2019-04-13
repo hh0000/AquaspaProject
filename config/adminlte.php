@@ -110,9 +110,10 @@ return [
     'menu' => [
         'MAIN NAVIGATION',
         [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'test',
+            'url'  => 'test',
+            'icon' => 'home',
+            
         ],
         [
             'text'        => 'Pages',
