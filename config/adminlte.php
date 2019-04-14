@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Nova</b>SOFT',
 
     'logo_mini' => '<b>A</b>LT',
 
@@ -108,7 +108,7 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        'MENÚ PRINCIPAL',
         [
             'text' => 'Reportes',
             'url'  => 'test',
@@ -116,72 +116,44 @@ return [
             
         ],
         [
-            'text'        => 'Pages',
+            'text'        => 'Mail',
             'url'         => 'admin/pages',
-            'icon'        => 'file',
-            'label'       => 4,
+            'icon'        => 'envelope',
+           
             'label_color' => 'success',
         ],
-        'ACCOUNT SETTINGS',
         [
-            'text' => 'Profile',
+            'text'        => 'Gráficos',
+            'url'         => 'admin/pages',
+            'icon'        => 'bar-chart',
+          
+            'label_color' => 'success',
+        ],
+
+
+        'AJUSTES DE CUENTA',
+        [
+            'text' => 'Perfil',
             'url'  => 'admin/settings',
             'icon' => 'user',
         ],
         [
-            'text' => 'Change Password',
+            'text' => 'Cambiar contraseña',
             'url'  => 'admin/settings',
             'icon' => 'lock',
         ],
+       
+        'AVISOS',
         [
-            'text'    => 'Multilevel',
-            'icon'    => 'share',
-            'submenu' => [
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'Level One',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Level Two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        'LABELS',
-        [
-            'text'       => 'Important',
+            'text'       => 'Importante',
             'icon_color' => 'red',
         ],
         [
-            'text'       => 'Warning',
+            'text'       => 'Peligro',
             'icon_color' => 'yellow',
         ],
         [
-            'text'       => 'Information',
+            'text'       => 'Información',
             'icon_color' => 'aqua',
         ],
     ],
