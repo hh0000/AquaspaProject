@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Novasoft - Web manager')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Novasoft</h1>
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+    <p>Ingreso correcto.</p>
 @stop
