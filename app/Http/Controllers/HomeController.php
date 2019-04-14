@@ -30,5 +30,10 @@ public function test(){
 
 }
 
+public function mail(){
+    return view('admin.mail');
+   
+   }
+
 }
 
