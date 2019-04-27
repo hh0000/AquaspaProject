@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Producto;
 
 class HomeController extends Controller
 {
@@ -26,13 +27,16 @@ class HomeController extends Controller
         return view('home');
     }
 public function test(){
- return view('admin.test');
-
+    //SE PASAN TODOS LOS DATOS DE LA TABLA PRODUCTOS A LA VISTA MEDIANTE LA VARIABLE DATOS
+    $data = Producto::all();
+    $datos = array("productos"=>$data);
+ return view('admin.reporteProductos',$datos);
+ 
 }
 
 public function mail(){
-    return view('admin.mail');
-   
+    return view('admin.mail');   
+
    }
 
 }

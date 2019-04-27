@@ -108,16 +108,16 @@ return [
     */
 
     'menu' => [
-        'MENÚ PRINCIPAL',
+        'REPORTES',
         [
-            'text' => 'Reportes',
-            'url'  => 'test',
+            'text' => 'Reporte Productos',
+            'url'  => 'reporteProductos',
             'icon' => 'home',
             
         ],
         [
             'text'        => 'Mail',
-            'url'         => 'admin/pages',
+            'url'         => 'mail',
             'icon'        => 'envelope',
            
             'label_color' => 'success',
