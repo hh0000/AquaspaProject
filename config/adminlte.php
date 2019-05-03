@@ -116,11 +116,10 @@ return [
             
         ],
         [
-            'text'        => 'Mail',
-            'url'         => 'mail',
-            'icon'        => 'envelope',
-           
-            'label_color' => 'success',
+            'text' => 'Reporte Ventas',
+            'url'  => 'reporteVentas',
+            'icon' => 'home',
+            
         ],
         [
             'text'        => 'Gráficos',
@@ -136,6 +135,13 @@ return [
             'text' => 'Perfil',
             'url'  => 'admin/settings',
             'icon' => 'user',
+        ],
+        [
+            'text'        => 'Mail',
+            'url'         => 'mail',
+            'icon'        => 'envelope',
+           
+            'label_color' => 'success',
         ],
         [
             'text' => 'Cambiar contraseña',

@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/reporteProductos', 'HomeController@test')->name('test');
+Route::get('/reporteVentas', 'HomeController@test')->name('test');
 Route::get('/mail', 'HomeController@mail')->name('mail');
