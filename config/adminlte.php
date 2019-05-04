@@ -122,6 +122,12 @@ return [
             
         ],
         [
+            'text' => 'Ventas Diarias',
+            'url'  => 'informePeriodo',
+            'icon' => 'home',
+            
+        ],
+        [
             'text'        => 'Gráficos',
             'url'         => 'admin/pages',
             'icon'        => 'bar-chart',
