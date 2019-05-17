@@ -57,7 +57,7 @@ $data = Venta::where('fechadate','>=',now())->get();
 //$fter=strtotime($fechafin);
 $data = Venta::where('fechadate','>=',$finit)->where('fechadate','>=',$ftert)->get();
 }
-$datos = array("ventas"=>$data);
+$datos = array("ventas"=>$data,"fini" => $fechainicio);
  return view('admin.informePeriodo',$datos);
 
 }
