@@ -72,7 +72,13 @@
 
 
         }       
-        );    
+        ); 
+
+        $.post("ws", function(data, status){
+        // alert("Data: " + data + "\nStatus: " + status);
+        console.log(data);
+         });
+
     </script>
 
    

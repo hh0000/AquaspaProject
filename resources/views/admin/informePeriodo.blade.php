@@ -20,7 +20,11 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" name="daterange" value="{{$fini}}" class="form-control pull-right"/>
+                @if( isset($fini) && isset($fter))
+                <input type="text" name="daterange" value="{{$fini}} Hasta {{$fter}} " class="form-control pull-right"/>
+                @else
+                <input type="text" name="daterange" value="" class="form-control pull-right"/>
+                @endif
                 </div>
                 <!-- /.input group -->
               </div>
