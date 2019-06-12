@@ -23,3 +23,4 @@ Route::get('/reporteVentas', 'HomeController@ventas')->name('test');
 Route::get('/mail', 'HomeController@mail')->name('mail');
 Route::get('/informePeriodo/{fechainicio?}/{fechafin?}', 'HomeController@informePeriodo')->name('informePeriodo');
 Route::post('/ws','HomeController@servicioWeb');
+Route::get('/informePeriodoTOP/{fechainicio?}/{fechafin?}', 'HomeController@informePeriodoTOP')->name('informePeriodoTOP');

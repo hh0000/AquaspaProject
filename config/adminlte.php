@@ -128,6 +128,12 @@ return [
             
         ],
         [
+            'text' => 'Productos más vendidos',
+            'url'  => 'informePeriodoTOP',
+            'icon' => 'home',
+            
+        ],
+        [
             'text'        => 'Gráficos',
             'url'         => 'admin/pages',
             'icon'        => 'bar-chart',
