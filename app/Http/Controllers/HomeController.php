@@ -78,7 +78,7 @@ public function mail(){
    
 }
 
-public function informePeriodoTOP($fechainicio=null,$fechafin=null){
+public function informePeriodoTOP($fechainicio=null,$fechafin=null,$valores=null){
   //Si las fechas son nulas, muestra las ventas del dia..
   $data = null;
   $datos = null;
@@ -94,10 +94,10 @@ $datos = array("ventas"=>$data);
   $fter2 = substr($fechafin,0,2)."-".substr($fechafin,2,2)."-".substr($fechafin,4,7);
 
 $data = Venta::where('fechadate','>=',$finit)->where('fechadate','<=',$ftert)->get();
-$datos = array("ventas"=>$data,"fini" => $finit2,"fter" => $fter2);
+$datos = array("ventas"=>$data,"fini" => $finit2,"fter" => $fter2,"valor"=> $valores);
 }
 
-return view('admin.informePeriodo',$datos);
+return view('admin.informePeriodoTOP',$datos);
    
 }
 

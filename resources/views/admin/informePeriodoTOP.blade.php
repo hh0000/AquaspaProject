@@ -3,19 +3,33 @@
 @section('title', 'Novasoft - Web manager')
 
 @section('content_header')
-    <h1>Reporte de ventas</h1>
+    <h1>Rotación de productos</h1>
 @stop
 
 @section('content')
 
 
 <div class="row">
-<div class="col-md-4">
+<div class="col-md-6">
 <div class="box box-primary">
 <div class="box-body">
-<div class="form-group">
-                <label>Rango de fecha:</label>
+<form>
+<div class="form-group row">
+                <label class="col-sm-3 col-form-label">Seleccione opción</label>                
+                <div class="col-sm-9">
+                
+    <select class="form-control" id="valores">
+      <option value='1'>Más vendidos</option>
+      <option value='2'>Menos vendido</option>
+      <option value='3'>Sin rotación</option>
+      <option value='4'>Sin stock</option>    
+    </select>  
 
+         </div>
+ </div>                   
+<div class="form-group row">
+<label class="col-sm-3 col-form-label">Rango de fecha:</label>                
+        <div class="col-sm-9">
                 <div class="input-group">
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
@@ -27,7 +41,11 @@
                 @endif
                 </div>
                 <!-- /.input group -->
-              </div>
+                
+        </div>
+              </form>             
+</div>
+
 </div>
 
 </div>
@@ -142,7 +160,8 @@
                 },
             }, function(start, end, label) {
                 console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-                document.location.replace(document.location.origin + "/informePeriodo/" + start.format("DDMMYYYY")+ "/" + end.format("DDMMYYYY"));
+                var valor = $("#valores").val();
+                document.location.replace(document.location.origin + "/informePeriodoTOP/" + start.format("DDMMYYYY")+ "/" + end.format("DDMMYYYY")+"/"+valor);
             });
         });    
     </script>

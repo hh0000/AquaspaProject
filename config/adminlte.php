@@ -112,42 +112,32 @@ return [
         [
             'text' => 'Reporte Productos',
             'url'  => 'reporteProductos',
-            'icon' => 'home',
+            'icon' => 'file',
             
         ],
         [
             'text' => 'Reporte Ventas',
             'url'  => 'reporteVentas',
-            'icon' => 'home',
+            'icon' => 'money',
             
         ],
         [
             'text' => 'Ventas Diarias',
             'url'  => 'informePeriodo',
-            'icon' => 'home',
+            'icon' => 'archive',
             
         ],
         [
             'text' => 'Productos más vendidos',
             'url'  => 'informePeriodoTOP',
-            'icon' => 'home',
+            'icon' => 'file-image-o',
             
         ],
-        [
-            'text'        => 'Gráficos',
-            'url'         => 'admin/pages',
-            'icon'        => 'bar-chart',
-          
-            'label_color' => 'success',
-        ],
+        
 
 
         'AJUSTES DE CUENTA',
-        [
-            'text' => 'Perfil',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
-        ],
+      
         [
             'text'        => 'Mail',
             'url'         => 'mail',
@@ -155,25 +145,9 @@ return [
            
             'label_color' => 'success',
         ],
-        [
-            'text' => 'Cambiar contraseña',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
-        ],
+      
        
-        'AVISOS',
-        [
-            'text'       => 'Importante',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Peligro',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Información',
-            'icon_color' => 'aqua',
-        ],
+        
     ],
 
     /*
