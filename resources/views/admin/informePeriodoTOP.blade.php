@@ -19,10 +19,10 @@
                 <div class="col-sm-9">
                 
     <select class="form-control" id="valores">
-      <option value='1'>Más vendidos</option>
-      <option value='2'>Menos vendido</option>
-      <option value='3'>Sin rotación</option>
-      <option value='4'>Sin stock</option>    
+      <option value='1' @php echo ($valor == '1') ? 'selected="selected"' : '' @endphp>Más vendidos</option>
+      <option value='2' @php echo ($valor == '2') ? 'selected="selected"' : '' @endphp>Menos vendido</option>
+      <option value='3' @php echo ($valor == '3') ? 'selected="selected"' : '' @endphp>Sin rotación</option>
+      <option value='4' @php echo ($valor == '4') ? 'selected="selected"' : '' @endphp>Sin stock</option>    
     </select>  
 
          </div>
@@ -58,11 +58,11 @@
 <table id="ventas" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>    
-            <th>Código venta</th>
-            <th>Fecha</th>
-            <th>Total</th>
-            <th>Descuento</th>
-            <th>Detalle</th>
+            <th>ID Producto</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Cantidad Vendido</th>
            
         </tr>
 
@@ -70,20 +70,12 @@
 <tbody>
         @foreach($ventas as $venta)
             <tr>
-                <td>{{$venta->cod_venta}}</td>
-                <td>{{$venta->fecha}}</td>
-                <td>{{$venta->total}}</td>
-                <td>{{$venta->descuento}}</td>
-                <td>
-                <ul>
-                @foreach($venta->detalles as $detalle)
-            
-                <li>{{$detalle->nombre}}</li>
+                <td>{{$venta->id_producto}}</td>
+                <td>{{$venta->nombre}}</td>
+                <td>{{$venta->precio}}</td>
+                <td>{{$venta->stock}}</td>
+                <td> {{$venta->cantidad_vendido}} </td>            
                
-        @endforeach
-                </ul>
-                
-                </td>
             </tr>
         @endforeach
 </tbody>
