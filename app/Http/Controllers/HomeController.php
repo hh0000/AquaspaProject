@@ -138,6 +138,25 @@ $datos = array("ventas"=>$data, "valor"=>"");
 
     break;
 
+    case '3':
+        $data = DB::select('select producto.*, tabla1.cantidad_vendido
+        from producto join
+        (select producto.id_producto, sum(detalleventa.cantidad) as cantidad_vendido from venta, detalleventa, producto 
+        WHERE
+        venta.cod_venta = detalleventa.cod_venta AND
+        detalleventa.cod_producto = producto.id_producto AND
+        venta.fechadate between ? and ?
+        group by producto.id_producto
+        having sum(detalleventa.cantidad) = 0
+        order by cantidad_vendido desc) tabla1
+        on producto.id_producto = tabla1.id_producto
+        order by cantidad_vendido desc;', [$finit, $ftert]);
+    break;
+
+    case '4':
+
+    break;
+
 
 
 
