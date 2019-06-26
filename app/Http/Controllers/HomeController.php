@@ -154,7 +154,9 @@ $datos = array("ventas"=>$data, "valor"=>"");
     break;
 
     case '4':
-
+        $data = DB::select('SELECT * FROM producto WHERE stock <= stockminimo'
+        
+        );
     break;
 
 

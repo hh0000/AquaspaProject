@@ -22,7 +22,7 @@
       <option value='1' @php echo ($valor == '1') ? 'selected="selected"' : '' @endphp>Más vendidos</option>
       <option value='2' @php echo ($valor == '2') ? 'selected="selected"' : '' @endphp>Menos vendido</option>
       <option value='3' @php echo ($valor == '3') ? 'selected="selected"' : '' @endphp>Sin rotación</option>
-      <option value='4' @php echo ($valor == '4') ? 'selected="selected"' : '' @endphp>Sin stock</option>    
+      <option value='4' @php echo ($valor == '4') ? 'selected="selected"' : '' @endphp>Stock bajo</option>    
     </select>  
 
          </div>
@@ -35,7 +35,11 @@
                     <i class="fa fa-calendar"></i>
                   </div>
                 @if( isset($fini) && isset($fter))
+                @if($valor!=4)
                 <input type="text" name="daterange" value="{{$fini}} Hasta {{$fter}} " class="form-control pull-right"/>
+                @else
+                <input type="text" name="daterange" value="" class="form-control pull-right" disabled/>
+                @endif
                 @else
                 <input type="text" name="daterange" value="" class="form-control pull-right"/>
                 @endif
@@ -62,8 +66,9 @@
             <th>Nombre</th>
             <th>Precio</th>
             <th>Stock</th>
+            @if($valor!=4)
             <th>Cantidad Vendido</th>
-           
+            @endif
         </tr>
 
     </thead>
@@ -74,8 +79,9 @@
                 <td>{{$venta->nombre}}</td>
                 <td>{{$venta->precio}}</td>
                 <td>{{$venta->stock}}</td>
+                @if($valor!=4)
                 <td> {{$venta->cantidad_vendido}} </td>            
-               
+                @endif
             </tr>
         @endforeach
 </tbody>
@@ -111,6 +117,17 @@
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf', 'print'
                 ]
+            });
+
+            $('#valores').change(function(){
+                //console.log($('#valores').val());
+                if($('#valores').val()==4){
+                    $('input[name="daterange"]').prop('disabled',true);
+                    $('input[name="daterange"]').val('');
+                    document.location.replace(document.location.origin + "/informePeriodoTOP/000000/000000/"+$('#valores').val());
+                }else{
+                    $('input[name="daterange"]').prop('disabled',false);
+                }
             });
 
             $('input[name="daterange"]').daterangepicker({
