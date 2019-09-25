@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'Novasoft',
+    'title' => 'FFitness',
 
     'title_prefix' => '',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Nova</b>SOFT',
+    'logo' => '<b>FF</b> itness',
 
     'logo_mini' => '<b>A</b>LT',
 
@@ -108,18 +108,37 @@ return [
     */
 
     'menu' => [
+        'ALUMNOS',
+        [
+            'text' => 'Ingreso Alumnos',
+            'url'  => 'ingresoAlumnos',
+            'icon' => 'address-card', 
+        ],
+
+        [
+            'text' => 'Modificación Alumnos',
+            'url'  => '',
+            'icon' => 'edit', 
+        ],
+
+        [
+            'text' => 'Dar de baja Alumno',
+            'url'  => '',
+            'icon' => 'trash', 
+        ],
+
+
         'REPORTES',
         [
-            'text' => 'Reporte Productos',
+            'text' => 'Ver Alumnos',
             'url'  => 'reporteProductos',
             'icon' => 'file',
-            
         ],
+        
         [
             'text' => 'Reporte Ventas',
             'url'  => 'reporteVentas',
-            'icon' => 'money',
-            
+            'icon' => 'money',            
         ],
         [
             'text' => 'Ventas Diarias',
@@ -130,14 +149,12 @@ return [
         [
             'text' => 'Productos más vendidos',
             'url'  => 'informePeriodoTOP',
-            'icon' => 'file-image-o',
-            
+            'icon' => 'file-image-o',            
         ],
         
 
 
-        'AJUSTES DE CUENTA',
-      
+        'AJUSTES DE CUENTA',      
         [
             'text'        => 'Mail',
             'url'         => 'mail',

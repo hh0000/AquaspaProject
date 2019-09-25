@@ -28,6 +28,15 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function ingresoAlumnos(){
+        return view('admin.ingresoAlumnos');
+    }
+
+
+
+
+
 public function test(){
     //SE PASAN TODOS LOS DATOS DE LA TABLA PRODUCTOS A LA VISTA MEDIANTE LA VARIABLE DATOS
     $data = Producto::all();
@@ -75,8 +84,7 @@ $datos = array("ventas"=>$data,"fini" => $finit2,"fter" => $fter2);
 
 
 public function mail(){
-    return view('admin.mail');   
-   
+    return view('admin.mail');      
 }
 
 public function informePeriodoTOP($fechainicio=null,$fechafin=null,$valores=null){
@@ -158,10 +166,6 @@ $datos = array("ventas"=>$data, "valor"=>"");
         
         );
     break;
-
-
-
-
   }
 
 
@@ -170,9 +174,7 @@ $datos = array("ventas"=>$data, "valor"=>"");
 $datos = array("ventas"=>$data,"fini" => $finit2,"fter" => $fter2,"valor"=> $valores);
 }
 
-return view('admin.informePeriodoTOP',$datos);
-   
+return view('admin.informePeriodoTOP',$datos);   
 }
-
 
 }

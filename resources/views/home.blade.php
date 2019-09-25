@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Novasoft - Web manager')
+@section('title', 'FFitness - Web Control')
 
 @section('content_header')
-    <h1>Novasoft</h1>
+    <h1>FFitness</h1>
 @stop
 
 @section('content')

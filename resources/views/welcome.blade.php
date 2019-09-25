@@ -84,12 +84,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Novasoft - Web Manager
+                    FFitness - Web Control
                 </div>
 
                 <div class="links">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalContacto">
-                        Contactenos
+                        Contáctenos
                     </button>                  
                 </div>
             </div>
