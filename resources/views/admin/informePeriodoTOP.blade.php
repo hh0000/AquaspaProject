@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Novasoft - Web manager')
+@section('title', 'Aqua Spa - Web Manager')
 
 @section('content_header')
     <h1>Rotación de productos</h1>

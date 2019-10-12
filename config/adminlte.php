@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'FFitness',
+    'title' => '<b>Aqua Spa</b>',
 
     'title_prefix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>FF</b> itness',
+    'logo' => 'Aqua Spa',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => 'Aqua Spa',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'green-light',
 
     /*
     |--------------------------------------------------------------------------
@@ -117,7 +117,7 @@ return [
 
         [
             'text' => 'Modificación Alumnos',
-            'url'  => '',
+            'url'  => 'modificacionAlumnos',
             'icon' => 'edit', 
         ],
 

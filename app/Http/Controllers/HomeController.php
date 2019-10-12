@@ -33,6 +33,10 @@ class HomeController extends Controller
         return view('admin.ingresoAlumnos');
     }
 
+    public function modificacionAlumnos(){
+        return view('admin.modificacionAlumnos');
+    }
+
 
 
 

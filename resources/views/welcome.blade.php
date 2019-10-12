@@ -6,7 +6,7 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <title>Novasoft - Web manager</title>
+        <title>Aqua Spa</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -84,12 +84,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    FFitness - Web Control
+                    Aqua Spa
                 </div>
 
                 <div class="links">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalContacto">
-                        Contáctenos
+                        Contáctanos
                     </button>                  
                 </div>
             </div>
@@ -107,30 +107,29 @@
       </div>
       <div class="modal-body">
       <div class="container">
-        <h6><small>Por favor, ingrese todos los datos solicitados</small></h6>
         </div>
 
             <div class="form-group">
-             <label for="usr">Nombre:</label>
+             <label for="usr">Nombre</label>
             <input type="text" class="form-control" id="usr">
             </div>
 
             <div class="form-group">
-             <label for="usr">Teléfono:</label>
+             <label for="usr">Teléfono</label>
             <input type="text" class="form-control" id="usr">
             </div>
 
             <div class="form-group">
-            <label for="pwd">Mail:</label>
+            <label for="pwd">Email</label>
             <input type="password" class="form-control" id="pwd">
             </div> 
 
             <div class="form-group">
-            <label for="comment">Comentarios:</label>
+            <label for="comment">Mensaje</label>
             <textarea class="form-control" rows="5" id="comment"></textarea>
             </div> 
 
-            <p class="text-break">2019 © Novasoft Chile,  All Rights Reserved. </p>
+            <p class="text-break"></p>
 
         </div>
       <div class="modal-footer">
