@@ -41,6 +41,9 @@ class HomeController extends Controller
         return view('admin.ingresoPlanes');
     }
 
+    public function verPlanes(){
+        return view('admin.verPlanes');
+    }
 
 
 

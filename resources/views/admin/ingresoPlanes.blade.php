@@ -17,45 +17,46 @@
             </div>
 
             <div class="box-body">
+            <form action="/servicio/guardar" method="post">
+            @csrf
                 <div class="row">
-
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>Nombre del plan:</h4>
+                    <h4>id del servicio:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input type="email" class="form-control">
+                            <input type="text" class="form-control" name="idServicio">
                         </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>Número de sesiones:</h4>
+                    <h4>Nombre de servicio:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input type="email" class="form-control">
+                            <input type="text" class="form-control" name="nombreServicio">
                         </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>Minutos de cada sesion:</h4>
+                    <h4>Cantidad de sesiones:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
-                            <input type="email" class="form-control">
+                            <input type="text" class="form-control" name="cantidadSesiones">
                         </div>
                 </div>               
                 </div>  
 
                 <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>Precio del plan:</h4>
+                    <h4>Minutos de la sesión:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                            <input type="email" class="form-control">
+                            <input type="text" class="form-control" name="minutosSesiones">
                         </div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <h4>Seleccione tipo de plan:</h4>
                         <div class="form-group ">
-                            <select class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                            <select class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true" name="tipoServicio">
                                 <option data-select2-id="1">Deportivo</option>
                                 <option data-select2-id="2">Estético</option>
                                 <option data-select2-id="3">Salud</option>                               
@@ -71,6 +72,14 @@
                             </span>
                         </div>
                 </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Valor del servicio:</h4>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                            <input type="text" class="form-control" name="costoServicio">
+                        </div>
+                </div> 
                 </div>
 
                 <div class="row">
@@ -81,19 +90,18 @@
 
                 <div class="form-group">
                   <div class="col-lg-8 col-sm-6 col-xs-12">
-                  <textarea class="form-control" rows="3" placeholder="Escriba una descripción"></textarea>
+                  <textarea class="form-control" rows="3" placeholder="Escriba una descripción" name="descripcion"></textarea>
                   </div>
             </div>
               <button class="btn btn-success btn-lg" type="submit">Guarda plan</button>
             </div>
 
                 </div>
+
+
+
+                </form>
             </div>
-
-
-
-
-
 </div>
 
 

@@ -29,7 +29,7 @@
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-            <h4>Número socio:</h4>
+            <h4>Número paciente:</h4>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
                 <input type="email" class="form-control" disabled="">

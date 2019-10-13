@@ -159,6 +159,12 @@ return [
             'url'  => 'ingresoPlanes',
             'icon' => 'file',
         ],
+
+        [
+            'text' => 'Ver Planes',
+            'url'  => 'verPlanes',
+            'icon' => 'file',
+        ],
         
 
 
