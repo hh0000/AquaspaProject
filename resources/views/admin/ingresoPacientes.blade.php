@@ -3,7 +3,7 @@
 @section('title', 'Aqua Spa - Web Control')
 
 @section('content_header')
-    <h1>Ingreso de alumnos al sistema</h1>
+    <h1>Ingreso de pacientes al sistema</h1>
     <h5>Por favor, rellene todos los campos</h5>
 @stop
 
@@ -19,7 +19,7 @@
 
             <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
-            <h4>Rut alumno:</h4>
+            <h4>Rut paciente:</h4>
             <div class="input-group input-group-md">
                 <input type="text" class="form-control" placeholder="Ingrese rut">
                     <span class="input-group-btn">
@@ -214,7 +214,7 @@
 
             <div class="row">
              <div class="box-header with-border">
-                          <h1 class="box-title">Comentarios de matricula:</h1>
+                          <h1 class="box-title">Comentarios de inscrición:</h1>
             </div>
             <br>
 
@@ -223,7 +223,7 @@
                   <textarea class="form-control" rows="3" placeholder="Escriba sus comentarios"></textarea>
                   </div>
             </div>
-              <button class="btn btn-success btn-lg" type="submit">Guarda datos</button>
+              <button class="btn btn-success btn-lg" type="submit">Guarda paciente</button>
             </div>
 
 

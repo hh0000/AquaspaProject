@@ -108,10 +108,10 @@ return [
     */
 
     'menu' => [
-        'ALUMNOS',
+        'PACIENTES',
         [
-            'text' => 'Ingreso Alumnos',
-            'url'  => 'ingresoAlumnos',
+            'text' => 'Ingreso Paciente',
+            'url'  => 'ingresoPacientes',
             'icon' => 'address-card', 
         ],
 
@@ -150,6 +150,14 @@ return [
             'text' => 'Productos más vendidos',
             'url'  => 'informePeriodoTOP',
             'icon' => 'file-image-o',            
+        ],
+
+
+        'PLANES',
+        [
+            'text' => 'Ingresar Plan',
+            'url'  => 'ingresoPlanes',
+            'icon' => 'file',
         ],
         
 

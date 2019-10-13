@@ -29,14 +29,17 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function ingresoAlumnos(){
-        return view('admin.ingresoAlumnos');
+    public function ingresoPacientes(){
+        return view('admin.ingresoPacientes');
     }
 
     public function modificacionAlumnos(){
         return view('admin.modificacionAlumnos');
     }
 
+    public function ingresoPlanes(){
+        return view('admin.ingresoPlanes');
+    }
 
 
 
