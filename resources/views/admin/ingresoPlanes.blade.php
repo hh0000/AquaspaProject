@@ -7,32 +7,30 @@
     <h5>Por favor, rellene todos los campos</h5>
 @stop
 
-
-
 @section('content')
 
 <div class="box box success">
-            <div class="box-header with-border">
-                          <h1 class="box-title">Datos de planes</h1>
-            </div>
+    <div class="box-header with-border">
+        <h1 class="box-title">Datos de planes</h1>
+    </div>
 
-            <div class="box-body">
-            <form action="/servicio/guardar" method="post">
+    <div class="box-body">
+        <form action="/plan/guardar" method="post">
             @csrf
-                <div class="row">
+            <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>id del servicio:</h4>
+                    <h4>Id del plan:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input type="text" class="form-control" name="idServicio">
+                            <input type="text" class="form-control" name="idPlan">
                         </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>Nombre de servicio:</h4>
+                    <h4>Nombre del plan:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input type="text" class="form-control" name="nombreServicio">
+                            <input type="text" class="form-control" name="nombrePlan">
                         </div>
                 </div>
 
@@ -42,10 +40,11 @@
                             <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
                             <input type="text" class="form-control" name="cantidadSesiones">
                         </div>
-                </div>               
-                </div>  
+                </div>
 
-                <div class="row">
+            </div>  
+
+            <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <h4>Minutos de la sesión:</h4>
                         <div class="input-group">
@@ -53,13 +52,14 @@
                             <input type="text" class="form-control" name="minutosSesiones">
                         </div>
                 </div>
+
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>Seleccione tipo de plan:</h4>
+                    <h4>Seleccione tipo de servicio:</h4>
                         <div class="form-group ">
                             <select class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true" name="tipoServicio">
-                                <option data-select2-id="1">Deportivo</option>
-                                <option data-select2-id="2">Estético</option>
-                                <option data-select2-id="3">Salud</option>                               
+                                <option data-select2-id="1">Servicio 1</option>
+                                <option data-select2-id="2">Servicio 2</option>
+                                <option data-select2-id="3">Servicio 3</option>
                             </select>
                             <span class="selection" style="width: 100%;">
                             <span class="selection">
@@ -77,37 +77,28 @@
                     <h4>Valor del servicio:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
-                            <input type="text" class="form-control" name="costoServicio">
+                            <input type="text" class="form-control" name="costoPlan">
                         </div>
                 </div> 
-                </div>
+            </div>
 
-                <div class="row">
+            <div class="row">
                 <div class="box-header with-border">
                           <h1 class="box-title">Descripción del plan:</h1>
                 </div>
+
                 <br>
 
                 <div class="form-group">
                   <div class="col-lg-8 col-sm-6 col-xs-12">
                   <textarea class="form-control" rows="3" placeholder="Escriba una descripción" name="descripcion"></textarea>
                   </div>
-            </div>
+                </div>
               <button class="btn btn-success btn-lg" type="submit">Guarda plan</button>
             </div>
-
-                </div>
-
-
-
-                </form>
-            </div>
+    </div>
+        </form>
 </div>
-
-
-
-
-
 
 @stop
 
@@ -123,9 +114,4 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
-
-
-
-
-
 @stop

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => '<b>Aqua Spa</b>',
+    'title' => 'Aqua Spa',
 
     'title_prefix' => '',
 
@@ -155,25 +155,35 @@ return [
 
         'PLANES',
         [
-            'text' => 'Ingresar Plan',
+            'text' => 'Ingresar Planes',
             'url'  => 'ingresoPlanes',
-            'icon' => 'file',
+            'icon' => 'archive',
         ],
 
         [
             'text' => 'Ver Planes',
             'url'  => 'verPlanes',
-            'icon' => 'file',
+            'icon' => 'archive',
         ],
-        
 
+        'SERVICIOS',
+        [
+            'text' => 'Ingresar Servicios',
+            'url'  => 'ingresoServicios',
+            'icon' => 'archive',
+        ],
+
+        [
+            'text' => 'Ver Servicios',
+            'url'  => 'verServicios',
+            'icon' => 'archive',
+        ],
 
         'AJUSTES DE CUENTA',      
         [
             'text'        => 'Mail',
             'url'         => 'mail',
             'icon'        => 'envelope',
-           
             'label_color' => 'success',
         ],
       

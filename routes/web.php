@@ -22,13 +22,15 @@ Route::get('/ingresoPacientes', 'HomeController@ingresoPacientes')->name('ingres
 
 Route::get('/ingresoPlanes', 'HomeController@ingresoPlanes')->name('ingresoPlanes');
 Route::get('/verPlanes', 'HomeController@verPlanes')->name('verPlanes');
+Route::post('/plan/guardar', 'PlanController@guardar');
+
+Route::get('/verPlanes', 'PlanController@verPlanes');
+
+Route::get('/ingresoServicios', 'HomeController@ingresoServicios')->name('ingresoServicios');
+Route::get('/verServicios', 'HomeController@verServicios')->name('verServicios');
 Route::post('/servicio/guardar', 'ServicioController@guardar');
 
-Route::get('/verPlanes', 'ServicioController@verPlanes');
-
-
-
-
+Route::get('/verServicios', 'ServicioController@verServicios');
 
 Route::get('/modificacionAlumnos', 'HomeController@modificacionAlumnos')->name('modificacionAlumnos');
 Route::get('/home', 'HomeController@index')->name('home');

@@ -3,7 +3,7 @@
 @section('title', 'Aqua Spa - Web Manager')
 
 @section('content_header')
-    <h1>Reporte de planes</h1>
+    <h1>Reporte de Servicios</h1>
 @stop
 
 @section('content')
@@ -12,28 +12,21 @@
     <thead>
         <tr>    
             <th>ID</th>
-            <th>Nombre plan</th>
-            <th>Cantidad sesiones</th>
-            <th>Minutos sesiones</th>
-            <th>Tipo de servicio</th>
-            <th>Costo del plan</th>
+            <th>Nombre del servicio</th>
             <th>Descripción</th>
+            <th>Valor del servicio</th>
         </tr>
     </thead>
-<tbody>
-        @foreach($plan as $plan)
+    <tbody>
+        @foreach($servicio as $servicio)
             <tr>
-                <td>{{$plan->idPlan}}</td>
-                <td>{{$plan->nombrePlan}}</td>
-                <td>{{$plan->cantidadSesiones}}</td>
-                <td>{{$plan->minutosSesiones}}</td>
-                <td>{{$plan->tipoServicio}}</td>
-                <td>{{$plan->costoPlan}}</td>
-                <td>{{$plan->descripcion}}</td>
+                <td>{{$servicio->idServicio}}</td>
+                <td>{{$servicio->nombreServicio}}</td>
+                <td>{{$servicio->descripcion}}</td>
+                <td>{{$servicio->costoServicio}}</td>
             </tr>
         @endforeach
-</tbody>
-
+    </tbody>
 </table>
 @stop
 
@@ -52,7 +45,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#plan').DataTable({
+            $('#servicio').DataTable({
                 "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
         },
@@ -61,11 +54,8 @@
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
             });
-
-
         }       
         );    
     </script>
-
    
 @stop

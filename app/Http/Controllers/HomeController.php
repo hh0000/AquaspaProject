@@ -45,7 +45,13 @@ class HomeController extends Controller
         return view('admin.verPlanes');
     }
 
+    public function ingresoServicios(){
+        return view('admin.ingresoServicios');
+    }
 
+    public function verServicios(){
+        return view('admin.verServicios');
+    }
 
 public function test(){
     //SE PASAN TODOS LOS DATOS DE LA TABLA PRODUCTOS A LA VISTA MEDIANTE LA VARIABLE DATOS
@@ -67,7 +73,6 @@ public function servicioWeb(){
     $data = Venta::all();
     return json_encode($data);
 }
-
 
 public function informePeriodo($fechainicio=null,$fechafin=null){
     //Si las fechas son nulas, muestra las ventas del dia..
@@ -91,7 +96,6 @@ $datos = array("ventas"=>$data,"fini" => $finit2,"fter" => $fter2);
  return view('admin.informePeriodo',$datos);
 
 }
-
 
 public function mail(){
     return view('admin.mail');      

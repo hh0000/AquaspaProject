@@ -8,10 +8,10 @@ use App\Servicio;
 
 class ServicioController extends Controller
 {
-    public function verPlanes(){
+    public function verServicios(){
         $data = Servicio::all();
         $datos = array("servicio"=>$data);
-        return view('admin.verPlanes',$datos);
+        return view('admin.verServicios',$datos);
     }
 
     public function index(){
@@ -23,12 +23,9 @@ class ServicioController extends Controller
         Servicio::create([
             "idServicio"=> $datos["idServicio"],
             "nombreServicio"=> $datos["nombreServicio"],
-            "cantidadSesiones"=> $datos["cantidadSesiones"],
-            "minutosSesiones"=> $datos["minutosSesiones"],
-            "tipoServicio"=> $datos["tipoServicio"],
-            "costoServicio"=> $datos["costoServicio"],
-            "descripcion"=> $datos["descripcion"]
+            "descripcion"=> $datos["descripcion"],
+            "costoServicio"=> $datos["costoServicio"],  
         ]);
-        return redirect("/verPlanes");
+        return redirect("/verServicios");
     }
 }
