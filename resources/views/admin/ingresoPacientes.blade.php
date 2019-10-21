@@ -16,36 +16,28 @@
             </div>
 
             <div class="box-body">
-
+            <form action="/paciente/guardar" method="post">
+            @csrf
             <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
             <h4>Rut paciente:</h4>
             <div class="input-group input-group-md">
-                <input type="text" class="form-control" placeholder="Ingrese rut">
+                <input type="text" class="form-control" placeholder="Ingrese rut" name="rutPaciente" value="{{old('rutPaciente')}}" required="required">
                     <span class="input-group-btn">
                       <button type="button" class="btn btn-info btn-flat">Buscar</button>
                     </span>
             </div>
+            </div>          
+           
             </div>
-
-            <div class="col-md-3 col-sm-6 col-xs-12">
-            <h4>Número paciente:</h4>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                <input type="email" class="form-control" disabled="">
-            </div>
-            </div>
-
-
-            </div>
-            <br>
+          
 
             <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12">
             <h4>Nombre:</h4>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="email" class="form-control" placeholder="Ingrese nombre completo">
+                <input type="text" class="form-control" placeholder="Ingrese nombre completo" name="nombrePaciente" required="required">
             </div>
             </div>
 
@@ -53,7 +45,7 @@
             <h4>Teléfono:</h4>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                <input type="email" class="form-control" placeholder="Ingrese Teléfono">
+                <input type="text" class="form-control" placeholder="Ingrese Teléfono" name="telefonoPaciente" required="required">
             </div>
             </div>
 
@@ -61,7 +53,7 @@
             <h4>Dirección:</h4>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-map-signs"></i></span>
-                <input type="email" class="form-control" placeholder="Ingrese dirección">
+                <input type="text" class="form-control" placeholder="Ingrese dirección" name="direccionPaciente" required="required"> 
             </div>
             </div>
             </div>
@@ -71,7 +63,7 @@
             <h4>Correo electrónico:</h4>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                <input type="email" class="form-control" placeholder="Ingrese email">
+                <input type="email" class="form-control" placeholder="Ingrese email" name="emailPaciente" required="required">
             </div>
             </div>
 
@@ -79,154 +71,49 @@
             <h4>Número emergencia:</h4>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-exclamation-triangle"></i></span>
-                <input type="email" class="form-control" placeholder="Ingrese Teléfono emergencia">
+                <input type="text" class="form-control" placeholder="Ingrese Teléfono emergencia" name="tel_emergenciaPaciente" required="required">
             </div>
             </div>
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Fecha ingreso:</h4>
-            <div class="input-group date">
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                <input type="date" class="form-control pull-right">
-            </div>
-            </div>
+            
 
             <div class="col-md-4 col-sm-6 col-xs-12">
             <h4>Fecha nacimiento:</h4>
             <div class="input-group date">
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                <input type="date" class="form-control pull-right">
+                <input type="date" class="form-control pull-right" name="fechaNacPaciente" required="required">
             </div>
             </div>
-
-
-
-
-            </div>
-              <br>
-
-            <div class="box-header with-border">
-                          <h1 class="box-title">Datos Plan</h1>
             </div>
             <br>
-
             <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Seleccione plan:</h4>
-            <div class="form-group ">
-                <select class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                  <option data-select2-id="1">Estudiante básico</option>
-                  <option data-select2-id="2">Estudiante anual</option>
-                  <option data-select2-id="3">Adulto básico</option>
-                  <option data-select2-id="4">Adulto anual</option>
-                  <option data-select2-id="5">Adulto full mensual</option>
-                </select>
-                <span class="selection" style="width: 100%;">
-                <span class="selection">
-                <span class="selection" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0">
-                <span class="selection__arrow" role="presentation"><b role="presentation"></b></span>
-                </span>
-                </span>
-                <span class="dropdown-wrapper" aria-hidden="true">
-                </span>
-                </span>
-              </div>
-           </div>
-
-
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Seleccione Descuento:</h4>
-            <div class="form-group ">
-                <select class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                  <option data-select2-id="1">Sin descuento</option>
-                  <option data-select2-id="2">2%</option>
-                  <option data-select2-id="3">4%</option>
-                  <option data-select2-id="4">6%</option>
-                  <option data-select2-id="5">8%</option>
-                  <option data-select2-id="6">10%</option>
-                  <option data-select2-id="7">Descuento especial</option>
-                </select>
-                <span class="selection" style="width: 100%;">
-                <span class="selection">
-                <span class="selection" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0">
-                <span class="selection__arrow" role="presentation"><b role="presentation"></b></span>
-                </span>
-                </span>
-                <span class="dropdown-wrapper" aria-hidden="true">
-                </span>
-                </span>
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Seleccione método pago:</h4>
-            <div class="form-group ">
-                <select class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                  <option data-select2-id="1">Efectivo</option>
-                  <option data-select2-id="2">Tarjeta débito</option>
-                  <option data-select2-id="3">Tarjeta crédito</option>
-                  <option data-select2-id="4">Transferencia</option>
-                  <option data-select2-id="5">Abono</option>
-                </select>
-                <span class="selection" style="width: 100%;">
-                <span class="selection">
-                <span class="selection" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0">
-                <span class="selection__arrow" role="presentation"><b role="presentation"></b></span>
-                </span>
-                </span>
-                <span class="dropdown-wrapper" aria-hidden="true">
-                </span>
-                </span>
-              </div>
-            </div>
-            </div>
-
-
-
-            <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Número documento:</h4>
+            <h4>Profesión:</h4>
             <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-file-text"></i></span>
-                <input type="email" class="form-control" placeholder="Número voucher | número boleta">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control" placeholder="Ingrese profesión" name="profesionPaciente" required="required">
             </div>
             </div>
-
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Saldo:</h4>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-repeat"></i></span>
-                <input type="email" class="form-control" placeholder="Saldo pendiente de pago">
-            </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Total a pagar:</h4>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-shopping-cart"></i></span>
-                <input type="email" class="form-control" placeholder="Valor total a cancelar">
-            </div>
-            </div>
+            
             </div>
 
             <br>
-
 
             <div class="row">
              <div class="box-header with-border">
-                          <h1 class="box-title">Comentarios de inscrición:</h1>
+                          <h1 class="box-title">Comentarios de inscripción:</h1>
             </div>
             <br>
 
             <div class="form-group">
                   <div class="col-lg-8 col-sm-6 col-xs-12">
-                  <textarea class="form-control" rows="3" placeholder="Escriba sus comentarios"></textarea>
+                  <textarea class="form-control" rows="3" placeholder="Escriba sus comentarios referentes al paciente..." name="comentarios" required="required"></textarea>
                   </div>
             </div>
-              <button class="btn btn-success btn-lg" type="submit">Guarda paciente</button>
+              <button class="btn btn-success btn-lg" type="submit">Ingresar paciente</button>
             </div>
 
-
+            </form>
             </div>
             <br>
 </div>

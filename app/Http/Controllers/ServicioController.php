@@ -20,11 +20,12 @@ class ServicioController extends Controller
 
     public function guardar(Request $request){
         $datos = $request->all();
-        Servicio::create([
-            "idServicio"=> $datos["idServicio"],
+        Servicio::create([            
             "nombreServicio"=> $datos["nombreServicio"],
-            "descripcion"=> $datos["descripcion"],
+            "minutosServicio"=> $datos["minutosServicio"],
             "costoServicio"=> $datos["costoServicio"],  
+            "descripcion"=> $datos["descripcion"],
+            
         ]);
         return redirect("/verServicios");
     }

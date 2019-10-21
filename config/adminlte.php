@@ -108,7 +108,7 @@ return [
     */
 
     'menu' => [
-        'PACIENTES',
+        'INGRESOS',
         [
             'text' => 'Ingreso Paciente',
             'url'  => 'ingresoPacientes',
@@ -116,8 +116,14 @@ return [
         ],
 
         [
-            'text' => 'Modificación Alumnos',
-            'url'  => 'modificacionAlumnos',
+            'text' => 'Ingresar Servicio',
+            'url'  => 'ingresoServicios',
+            'icon' => 'archive',
+        ],
+
+        [
+            'text' => 'Ingresar Profesional',
+            'url'  => 'ingresoProfesional',
             'icon' => 'edit', 
         ],
 
@@ -130,19 +136,19 @@ return [
 
         'REPORTES',
         [
-            'text' => 'Ver Alumnos',
-            'url'  => 'reporteProductos',
+            'text' => 'Ver Pacientes',
+            'url'  => 'verPaciente',
             'icon' => 'file',
         ],
         
         [
-            'text' => 'Reporte Ventas',
-            'url'  => 'reporteVentas',
+            'text' => 'Ver Servicios',
+            'url'  => 'verServicios',
             'icon' => 'money',            
         ],
         [
-            'text' => 'Ventas Diarias',
-            'url'  => 'informePeriodo',
+            'text' => 'Ver Profesional',
+            'url'  => 'verProfesional',
             'icon' => 'archive',
             
         ],
@@ -153,32 +159,8 @@ return [
         ],
 
 
-        'PLANES',
-        [
-            'text' => 'Ingresar Planes',
-            'url'  => 'ingresoPlanes',
-            'icon' => 'archive',
-        ],
-
-        [
-            'text' => 'Ver Planes',
-            'url'  => 'verPlanes',
-            'icon' => 'archive',
-        ],
-
-        'SERVICIOS',
-        [
-            'text' => 'Ingresar Servicios',
-            'url'  => 'ingresoServicios',
-            'icon' => 'archive',
-        ],
-
-        [
-            'text' => 'Ver Servicios',
-            'url'  => 'verServicios',
-            'icon' => 'archive',
-        ],
-
+        
+        
         'AJUSTES DE CUENTA',      
         [
             'text'        => 'Mail',

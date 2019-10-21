@@ -29,9 +29,38 @@ class HomeController extends Controller
         return view('home');
     }
 
+    //ingresos
     public function ingresoPacientes(){
         return view('admin.ingresoPacientes');
     }
+
+    public function ingresoServicios(){
+        return view('admin.ingresoServicios');
+    }
+
+    public function ingresoProfesional(){
+        return view('admin.ingresoProfesional');
+    }
+
+
+    //reportes
+    public function verServicios(){
+        return view('admin.verServicios');
+    }
+
+    public function verPaciente(){
+        return view('admin.verPaciente');
+    }
+
+    public function verProfesional(){
+        return view('admin.verProfesional');
+    }
+
+
+
+
+
+
 
     public function modificacionAlumnos(){
         return view('admin.modificacionAlumnos');
@@ -41,17 +70,13 @@ class HomeController extends Controller
         return view('admin.ingresoPlanes');
     }
 
-    public function verPlanes(){
-        return view('admin.verPlanes');
-    }
+   
 
-    public function ingresoServicios(){
-        return view('admin.ingresoServicios');
-    }
+    
 
-    public function verServicios(){
-        return view('admin.verServicios');
-    }
+
+
+   
 
 public function test(){
     //SE PASAN TODOS LOS DATOS DE LA TABLA PRODUCTOS A LA VISTA MEDIANTE LA VARIABLE DATOS

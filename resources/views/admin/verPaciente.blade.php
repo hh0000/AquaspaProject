@@ -3,33 +3,46 @@
 @section('title', 'Aqua Spa - Web Manager')
 
 @section('content_header')
-    <h1>Reporte de planes</h1>
+    <h1>Informe de pacientes</h1>
 @stop
 
 @section('content')
 
-<table id="plan" class="table table-striped table-bordered" style="width:100%">
+@include('flash::message')
+
+
+
+<table id="paciente" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>    
             <th>ID</th>
-            <th>Nombre plan</th>
-            <th>Cantidad sesiones</th>
-            <th>Minutos sesiones</th>
-            <th>Tipo de servicio</th>
-            <th>Costo del plan</th>
-            <th>Descripción</th>
+            <th>Nombre paciente</th>
+            <th>Rut paciente</th>
+            <th>Fecha Nacimiento</th>
+            <th>Email</th>
+            <th>Profesión</th>
+            <th>Teléfono emergencia</th>
+            <th>Teléfono personal</th>
+            <th>Dirección</th>
+            <th>Comentarios</th>
+            <th>Acción</th>
         </tr>
     </thead>
 <tbody>
-        @foreach($plan as $plan)
+        @foreach($paciente as $value)
             <tr>
-                <td>{{$plan->idPlan}}</td>
-                <td>{{$plan->nombrePlan}}</td>
-                <td>{{$plan->cantidadSesiones}}</td>
-                <td>{{$plan->minutosSesiones}}</td>
-                <td>{{$plan->tipoServicio}}</td>
-                <td>{{$plan->costoPlan}}</td>
-                <td>{{$plan->descripcion}}</td>
+                <td>{{$value->idPaciente}}</td>
+                <td>{{$value->nombrePaciente}}</td>
+                <td>{{$value->rutPaciente}}</td>
+                <td>{{$value->fechaNacPaciente}}</td>
+                <td>{{$value->emailPaciente}}</td>
+                <td>{{$value->profesionPaciente}}</td>
+                <td>{{$value->tel_emergenciaPaciente}}</td>
+                <td>{{$value->telefonoPaciente}}</td>
+                <td>{{$value->direccionPaciente}}</td>
+                <td>{{$value->comentarios}}</td>
+                <td><a href="" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+                <a href="{{ route('eliminarPaciente', $value->idPaciente) }}" onclick="return confirm('Seguro que desea borrar?')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>
             </tr>
         @endforeach
 </tbody>
@@ -52,7 +65,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#plan').DataTable({
+            $('#paciente').DataTable({
                 "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
         },

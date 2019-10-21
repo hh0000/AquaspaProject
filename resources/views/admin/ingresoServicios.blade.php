@@ -19,14 +19,6 @@
             @csrf
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>Id del servicio:</h4>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input type="text" class="form-control" name="idServicio">
-                        </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 col-xs-12">
                     <h4>Nombre del servicio:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
@@ -35,7 +27,15 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>Valor del Servicio:</h4>
+                    <h4>Minutos del servicio:</h4>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
+                            <input type="text" class="form-control" name="minutosServicio">
+                        </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Precio del Servicio:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
                             <input type="text" class="form-control" name="costoServicio">
@@ -52,9 +52,9 @@
 
                 <div class="form-group">
                   <div class="col-lg-8 col-sm-6 col-xs-12">
-                  <textarea class="form-control" rows="3" placeholder="Escriba una descripción" name="descripcion"></textarea>
+                  <textarea class="form-control" rows="3" placeholder="Escriba una descripción..." name="descripcion"></textarea>
                 </div>
-              <button class="btn btn-success btn-lg" type="submit">Guarda plan</button>
+              <button class="btn btn-success btn-lg" type="submit">Ingresar plan</button>
             </div>
 
     </div>

@@ -8,22 +8,26 @@
 
 @section('content')
 
-<table id="plan" class="table table-striped table-bordered" style="width:100%">
+<table id="servicio" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>    
             <th>ID</th>
             <th>Nombre del servicio</th>
-            <th>Descripción</th>
+            <th>Minutos del servicio</th>
             <th>Valor del servicio</th>
+            <th>Descripción</th>
+            <th>Acción</th>            
         </tr>
     </thead>
     <tbody>
-        @foreach($servicio as $servicio)
+        @foreach($servicio as $value)
             <tr>
-                <td>{{$servicio->idServicio}}</td>
-                <td>{{$servicio->nombreServicio}}</td>
-                <td>{{$servicio->descripcion}}</td>
-                <td>{{$servicio->costoServicio}}</td>
+                <td>{{$value->idServicio}}</td>
+                <td>{{$value->nombreServicio}}</td>
+                <td>{{$value->minutosServicio}}</td>
+                <td>{{$value->costoServicio}}</td>
+                <td>{{$value->descripcion}}</td>
+                <td><a href="" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> </a>  <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>                
             </tr>
         @endforeach
     </tbody>
