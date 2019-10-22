@@ -127,11 +127,6 @@ return [
             'icon' => 'edit', 
         ],
 
-        [
-            'text' => 'Dar de baja Alumno',
-            'url'  => '',
-            'icon' => 'trash', 
-        ],
 
 
         'REPORTES',

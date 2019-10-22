@@ -27,7 +27,9 @@
                 <td>{{$value->minutosServicio}}</td>
                 <td>{{$value->costoServicio}}</td>
                 <td>{{$value->descripcion}}</td>
-                <td><a href="" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> </a>  <a href="" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>                
+                <td><a href="" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+                <a href="{{ route('eliminarServicio', $value->idServicio) }}" onclick="return confirm('Seguro que desea borrar?')" class="btn btn-danger" id="btnEliminar">                    
+                <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>                
             </tr>
         @endforeach
     </tbody>

@@ -19,6 +19,14 @@ class ServicioController extends Controller
     }
 
     public function guardar(Request $request){
+
+        $datosValidacion = $request->validate([
+            'nombreServicio' => 'required',
+            'minutosServicio' => 'required | numeric',
+            'costoServicio' => 'required | numeric',
+            'descripcion' => 'required | max: 1000'
+        ]);
+
         $datos = $request->all();
         Servicio::create([            
             "nombreServicio"=> $datos["nombreServicio"],
@@ -27,6 +35,13 @@ class ServicioController extends Controller
             "descripcion"=> $datos["descripcion"],
             
         ]);
+        return redirect("/ingresoServicios");
+    }
+
+    public function eliminar($idServicio){
+        $data = Servicio::find($idServicio);
+        $data->delete();
         return redirect("/verServicios");
+
     }
 }

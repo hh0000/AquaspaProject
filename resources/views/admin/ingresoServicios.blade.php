@@ -8,6 +8,23 @@
 @stop
 
 @section('content')
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @elseif ( $errors = null)
+    <div class="alert alert-success">
+        <ul>
+            <li><th>Usuario creado correctamente!</th></li>
+        </ul>
+    </div>
+    @endif
+
+
 
 <div class="box box success">
     <div class="box-header with-border">

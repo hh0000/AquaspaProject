@@ -35,11 +35,25 @@ Route::get('/ingresoServicios', 'HomeController@ingresoServicios')->name('ingres
 Route::post('/servicio/guardar', 'ServicioController@guardar');
 Route::get('/verServicios', 'HomeController@verServicios')->name('verServicios');
 Route::get('/verServicios', 'ServicioController@verServicios');
+Route::group(['prefix' => 'servicio'], function(){
+    Route::resource('servicio','ServicioController');
+    Route::get('verServicio/{idServicio}',[
+        'uses' => 'ServicioController@eliminar',
+        'as'   => 'eliminarServicio'
+    ]);
+});
 
 Route::get('/ingresoProfesional', 'HomeController@ingresoProfesional')->name('ingresoProfesional');
 Route::post('/profesional/guardar', 'ProfesionalController@guardar');
 Route::get('/verProfesional', 'HomeController@verProfesional')->name('verProfesional');
 Route::get('/verProfesional', 'ProfesionalController@verProfesional');
+Route::group(['prefix' => 'profesional'], function(){
+    Route::resource('profesional','ProfesionalController');
+    Route::get('verProfesional/{idProfesional}',[
+        'uses' => 'ProfesionalController@eliminar',
+        'as'   => 'eliminarProfesional'
+    ]);
+});
 
 
 //Route::get('/ingresoPlanes', 'HomeController@ingresoPlanes')->name('ingresoPlanes');

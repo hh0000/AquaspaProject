@@ -19,6 +19,13 @@ class ProfesionalController extends Controller
     }
 
     public function guardar(Request $request){
+
+        $datosValidacion = $request->validate([
+            'nombreProfesional'=>'required',
+            'rutProfesional'=>'required',
+            'telefonoProfesional'=>'required | numeric'
+        ]);
+
         $datos = $request->all();
         Profesional::create([            
             "nombreProfesional"=> $datos["nombreProfesional"],
@@ -28,4 +35,13 @@ class ProfesionalController extends Controller
         ]);
         return redirect("/verProfesional");
     }
+
+    public function eliminar($idProfesional){
+        $data = Profesional::find($idProfesional);
+        $data->delete();
+        return redirect("/verProfesional");
+
+    }
+
+
 }

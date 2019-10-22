@@ -8,9 +8,6 @@
 
 @section('content')
 
-@include('flash::message')
-
-
 
 <table id="paciente" class="table table-striped table-bordered" style="width:100%">
     <thead>
@@ -42,9 +39,12 @@
                 <td>{{$value->direccionPaciente}}</td>
                 <td>{{$value->comentarios}}</td>
                 <td><a href="" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
-                <a href="{{ route('eliminarPaciente', $value->idPaciente) }}" onclick="return confirm('Seguro que desea borrar?')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>
+                <a href="{{ route('eliminarPaciente', $value->idPaciente) }}" onclick="return confirm('Seguro que desea borrar?')" class="btn btn-danger" id="btnEliminar">                    
+                <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>
             </tr>
         @endforeach
+
+       
 </tbody>
 
 </table>
@@ -61,7 +61,10 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script> 
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+//librerias Toastr 
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 
     <script>
         $(document).ready(function() {
@@ -74,8 +77,6 @@
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
             });
-
-
         }       
         );    
     </script>

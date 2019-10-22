@@ -22,6 +22,19 @@ class PacienteController extends Controller
     }
 
     public function guardar(Request $request){
+        
+        $datosValidacion = $request->validate([
+            'nombrePaciente'=>'required',
+            'rutPaciente'=>'required',
+            'fechaNacPaciente'=>'required | date',
+            'emailPaciente'=>'required | email',
+            'profesionPaciente'=>'required',
+            'tel_emergenciaPaciente'=>'required | numeric',
+            'telefonoPaciente'=>'required | numeric',
+            'direccionPaciente'=>'required',
+            'comentarios'=>'required | max:1000'
+        ]);
+
         $datos = $request->all();
         Paciente::create([
             "nombrePaciente"=> $datos["nombrePaciente"],
@@ -34,14 +47,15 @@ class PacienteController extends Controller
             "direccionPaciente"=> $datos["direccionPaciente"], 
             "comentarios"=> $datos["comentarios"], 
         ]);
+        
+        
         return redirect("/verPaciente");
     }
 
     public function eliminar($idPaciente){
         $data = Paciente::find($idPaciente);
         $data->delete();
+        return redirect("/verPaciente");           
 
-        //flash::warning('El usuario a sido borrado de forma exitosa!');
-        return redirect("/verPaciente");
     }
 }
