@@ -49,13 +49,35 @@ class PacienteController extends Controller
         ]);
         
         
-        return redirect("/verPaciente");
+        return redirect("/verPaciente")->with('mensaje','Paciente agregado correctamente!');
+    }
+
+    public function modificacionPaciente($idPaciente){
+        $datos = Paciente::findOrFail($idPaciente);
+        return view('admin.modificacionPaciente', compact('datos'));
+    }
+
+    public function modificacion(Request $request, $idPaciente){
+        $datos = Paciente::findOrFail($idPaciente);
+        $datos->nombrePaciente = $request->nombrePaciente;
+        $datos->rutPaciente = $request->rutPaciente;
+        $datos->fechaNacPaciente = $request->fechaNacPaciente;
+        $datos->emailPaciente = $request->emailPaciente;
+        $datos->profesionPaciente = $request->profesionPaciente;
+        $datos->tel_emergenciaPaciente = $request->tel_emergenciaPaciente;
+        $datos->telefonoPaciente = $request->telefonoPaciente;
+        $datos->direccionPaciente = $request->direccionPaciente;
+        $datos->comentarios = $request->comentarios;
+
+        $datos->save();
+
+        return redirect("/verPaciente")->with('mensaje','Paciente modificado correctamente');
     }
 
     public function eliminar($idPaciente){
         $data = Paciente::find($idPaciente);
         $data->delete();
-        return redirect("/verPaciente");           
+        return redirect("/verPaciente")->with('mensaje','Paciente eliminado con exito');           
 
     }
 }

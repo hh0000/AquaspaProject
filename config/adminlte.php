@@ -151,8 +151,7 @@ return [
             'text' => 'Productos más vendidos',
             'url'  => 'informePeriodoTOP',
             'icon' => 'file-image-o',            
-        ],
-
+        ],      
 
         
         

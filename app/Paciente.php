@@ -10,5 +10,5 @@ class Paciente extends Model
     protected $primaryKey = 'idPaciente';
     public $timestamps = false;
 
-    protected $fillable = ['idPaciente', 'nombrePaciente', 'fechaNacPaciente', 'emailPaciente','profesionPaciente','tel_emergenciaPaciente','telefonoPaciente','direccionPaciente','comentarios'];
+    protected $fillable = ['idPaciente','rutPaciente', 'nombrePaciente', 'fechaNacPaciente', 'emailPaciente','profesionPaciente','tel_emergenciaPaciente','telefonoPaciente','direccionPaciente','comentarios'];
 }

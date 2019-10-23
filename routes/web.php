@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,6 +28,8 @@ Route::group(['prefix' => 'paciente'], function(){
         'as'   => 'eliminarPaciente'
     ]);
 });
+Route::get('/modificacionPaciente/{idPaciente}', 'PacienteController@modificacionPaciente')->name('modificacionPaciente');
+Route::put('/modificacion/{idPaciente}','PacienteController@modificacion')->name('paciente.modificacion');
 
 
 
@@ -56,6 +58,8 @@ Route::group(['prefix' => 'profesional'], function(){
 });
 
 
+
+
 //Route::get('/ingresoPlanes', 'HomeController@ingresoPlanes')->name('ingresoPlanes');
 //Route::post('/plan/guardar', 'PlanController@guardar');
 //Route::get('/verPlanes', 'HomeController@verPlanes')->name('verPlanes');
@@ -64,7 +68,7 @@ Route::group(['prefix' => 'profesional'], function(){
 
 
 //Route::get('/modificacionAlumnos', 'HomeController@modificacionAlumnos')->name('modificacionAlumnos');
-Route::get('/home', 'HomeController@index')->name('home');
+
 //Route::get('/reporteProductos', 'HomeController@test')->name('test');
 //Route::get('/reporteVentas', 'HomeController@ventas')->name('test');
 //Route::get('/mail', 'HomeController@mail')->name('mail');

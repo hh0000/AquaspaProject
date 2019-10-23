@@ -56,15 +56,16 @@ class HomeController extends Controller
         return view('admin.verProfesional');
     }
 
-
-
-
-
-
-
-    public function modificacionAlumnos(){
-        return view('admin.modificacionAlumnos');
+    public function modificacionPaciente(){
+        return view('admin.modificacionPaciente');
     }
+
+
+
+
+
+
+    
 
     public function ingresoPlanes(){
         return view('admin.ingresoPlanes');
