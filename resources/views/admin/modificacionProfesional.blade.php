@@ -3,61 +3,63 @@
 @section('title', 'AquaSpa - Web Control')
 
 @section('content_header')
-    <h1>Ingreso de servicios al sistema</h1>
-    <h5>Por favor, rellene todos los campos que desea modificar</h5>
+    <h1>Modifiación de profesionales del sistema</h1>
+    <h5>Por favor, rellene todos los campos</h5>
 @stop
 
-@section('content')
+@section('content')   
+
+
 
 <div class="box box success">
     <div class="box-header with-border">
-        <h1 class="box-title">Datos de servicios</h1>
+        <h1 class="box-title">Datos del profesional {{ $datos->nombreProfesional }}, que desea modificar </h1>
     </div>
 
     <div class="box-body">
-        <form action="/servicio/guardar" method="post">
+        <form action="{{ route('profesional.modificacion',$datos->idProfesional) }}" method="post">
+            @method('PUT')
             @csrf
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>Nombre del servicio:</h4>
+                    <h4>Nombre del profesional:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input type="text" class="form-control" name="nombreServicio">
+                            <input type="text" class="form-control" name="nombreProfesional" value="{{$datos->nombreProfesional}}">
                         </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>Minutos del servicio:</h4>
+                    <h4>Rut del profesional:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input type="text" class="form-control" name="minutosServicio">
+                            <input type="text" class="form-control" name="rutProfesional" value="{{$datos->rutProfesional}}">
                         </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <h4>Precio del Servicio:</h4>
+                    <h4>Teléfono del profesional:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
-                            <input type="text" class="form-control" name="costoServicio">
+                            <input type="text" class="form-control" name="telefonoProfesional" value="{{$datos->telefonoProfesional}}">
                         </div>
                 </div>
             </div>  
-
-            <div class="row">
-                <div class="box-header with-border">
-                    <h1 class="box-title">Descripción del servicio:</h1>
-                </div>
-
-                <br>
-
-                <div class="form-group">
-                  <div class="col-lg-8 col-sm-6 col-xs-12">
-                  <textarea class="form-control" rows="3" placeholder="Escriba una descripción..." name="descripcion"></textarea>
-                </div>
-              <button class="btn btn-success btn-lg" type="submit">Ingresar servicio</button>
+            
+            <div class="row">         
+            
+            
+            <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="input-group">               
+            </div>
+            
+            </div>
+            
             </div>
 
-    </div>
+            <br>            
+            <button class="btn btn-warning btn-lg" type="submit">Modificar servicio</button>
+
         </form>
 </div>
 

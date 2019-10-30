@@ -71,13 +71,13 @@ class PacienteController extends Controller
 
         $datos->save();
 
-        return redirect("/verPaciente")->with('mensaje','Paciente modificado correctamente');
+        return redirect("/verPaciente")->with('mensaje','Paciente modificado correctamente!');
     }
 
     public function eliminar($idPaciente){
         $data = Paciente::find($idPaciente);
         $data->delete();
-        return redirect("/verPaciente")->with('mensaje','Paciente eliminado con exito');           
+        return redirect("/verPaciente")->with('mensaje','Paciente eliminado con exito!');           
 
     }
 }

@@ -34,13 +34,30 @@ class ProfesionalController extends Controller
             "telefonoProfesional"=> $datos["telefonoProfesional"],            
             
         ]);
-        return redirect("/verProfesional");
+        return redirect("/verProfesional")->with('mensaje','Profesional creado correctamente!');
     }
+
+    public function modificacionProfesional($idProfesional){
+        $datos = Profesional::findOrFail($idProfesional);
+        return view('admin.modificacionProfesional', compact('datos'));
+    }
+    
+    public function modificacion(Request $request, $idProfesional){
+        $datos = Profesional::findOrFail($idProfesional);
+        $datos->nombreProfesional = $request->nombreProfesional;
+        $datos->rutProfesional = $request->rutProfesional;
+        $datos->telefonoProfesional = $request->telefonoProfesional;
+
+        $datos->save();
+
+        return redirect("/verProfesional")->with('mensaje','Profesional modificado correctamente');
+    }
+
 
     public function eliminar($idProfesional){
         $data = Profesional::find($idProfesional);
         $data->delete();
-        return redirect("/verProfesional");
+        return redirect("/verProfesional")->with('mensaje','Profesional eliminado correctamente');
 
     }
 

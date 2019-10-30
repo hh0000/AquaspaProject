@@ -35,13 +35,30 @@ class ServicioController extends Controller
             "descripcion"=> $datos["descripcion"],
             
         ]);
-        return redirect("/ingresoServicios");
+        return redirect("/verServicios")->with('mensaje','Servicio agregado correctamente!');
+    }
+
+    public function modificacionServicio($idServicio){
+        $datos = Servicio::findOrFail($idServicio);
+        return view('admin.modificacionServicio',compact('datos'));
+    }
+
+    public function modificacion(Request $request, $idServicio){
+        $datos = Servicio::findOrFail($idServicio);
+        $datos->nombreServicio = $request->nombreServicio;
+        $datos->minutosServicio = $request->minutosServicio;
+        $datos->costoServicio = $request->costoServicio;
+        $datos->descripcion = $request->descripcion;
+
+        $datos->save();
+
+        return redirect("/verServicios")->with('mensaje','Servicio modificado correctamente');
     }
 
     public function eliminar($idServicio){
         $data = Servicio::find($idServicio);
         $data->delete();
-        return redirect("/verServicios");
+        return redirect("/verServicios")->with('mensaje','Servicio eliminado correctamente');
 
     }
 }

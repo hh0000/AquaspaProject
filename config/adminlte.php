@@ -127,6 +127,13 @@ return [
             'icon' => 'edit', 
         ],
 
+        'VENTAS',
+        [
+            'text' => 'Ingresar Venta',
+            'url'  => 'ingresoVentas',
+            'icon' => 'file',
+        ],
+
 
 
         'REPORTES',
@@ -147,13 +154,7 @@ return [
             'icon' => 'archive',
             
         ],
-        [
-            'text' => 'Productos más vendidos',
-            'url'  => 'informePeriodoTOP',
-            'icon' => 'file-image-o',            
-        ],      
-
-        
+              
         
         'AJUSTES DE CUENTA',      
         [

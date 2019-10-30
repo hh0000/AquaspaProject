@@ -44,6 +44,9 @@ Route::group(['prefix' => 'servicio'], function(){
         'as'   => 'eliminarServicio'
     ]);
 });
+Route::get('/modificacionServicio/{idServicio}', 'ServicioController@modificacionServicio')->name('modificacionServicio');
+Route::put('/modificacionServi/{idServicio}','ServicioController@modificacion')->name('servicio.modificacion');
+
 
 Route::get('/ingresoProfesional', 'HomeController@ingresoProfesional')->name('ingresoProfesional');
 Route::post('/profesional/guardar', 'ProfesionalController@guardar');
@@ -56,6 +59,10 @@ Route::group(['prefix' => 'profesional'], function(){
         'as'   => 'eliminarProfesional'
     ]);
 });
+Route::get('/modificacionProfesional/{idProfesional}', 'ProfesionalController@modificacionProfesional')->name('modificacionProfesional');
+Route::put('/modificacionProf/{idProfesional}','ProfesionalController@modificacion')->name('profesional.modificacion');
+
+Route::get('/ingresoVentas/{idPaciente}',)
 
 
 

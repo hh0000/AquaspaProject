@@ -3,7 +3,7 @@
 @section('title', 'Aqua Spa - Web Manager')
 
 @section('content_header')
-    <h1>Informe de pacientes</h1>
+    <h1>Informe de pacientes del sistema</h1>
 @stop
 
 @section('content')

@@ -3,10 +3,13 @@
 @section('title', 'Aqua Spa - Web Manager')
 
 @section('content_header')
-    <h1>Reporte de Servicios</h1>
+    <h1>Reporte de Servicios del sistema</h1>
 @stop
 
 @section('content')
+@if (session('mensaje'))
+    <div class="alert alert-success">{{ session('mensaje') }}</div>
+@endif
 
 <table id="servicio" class="table table-striped table-bordered" style="width:100%">
     <thead>
@@ -27,7 +30,7 @@
                 <td>{{$value->minutosServicio}}</td>
                 <td>{{$value->costoServicio}}</td>
                 <td>{{$value->descripcion}}</td>
-                <td><a href="" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+                <td><a href="{{ route('modificacionServicio', $value->idServicio) }}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
                 <a href="{{ route('eliminarServicio', $value->idServicio) }}" onclick="return confirm('Seguro que desea borrar?')" class="btn btn-danger" id="btnEliminar">                    
                 <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>                
             </tr>

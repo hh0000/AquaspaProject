@@ -7,6 +7,9 @@
 @stop
 
 @section('content')
+@if (session('mensaje'))
+    <div class="alert alert-success">{{ session('mensaje') }}</div>
+@endif
 
 <table id="profesional" class="table table-striped table-bordered" style="width:100%">
     <thead>
@@ -25,7 +28,7 @@
                 <td>{{$value->nombreProfesional}}</td>
                 <td>{{$value->rutProfesional}}</td>
                 <td>{{$value->telefonoProfesional}}</td>
-                <td><a href="" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+                <td><a href="{{ route('modificacionProfesional',$value->idProfesional )}}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
                 <a href="{{ route('eliminarProfesional', $value->idProfesional) }}" onclick="return confirm('Seguro que desea borrar?')" class="btn btn-danger" id="btnEliminar">                    
                 <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>                             
             </tr>
