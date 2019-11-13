@@ -11,13 +11,18 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script type="text/javascript" src="/plugins/fullcalendar/plugins/moment.min.js"></script>
+    <script type="text/javascript" src="/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="/plugins/fullcalendar/locales/es.js"></script>  
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="/plugins/fullcalendar/fullcalendar.min.css">
 </head>
 <body>
     <div id="app">
@@ -76,5 +81,6 @@
             @yield('content')
         </main>
     </div>
+
 </body>
 </html>

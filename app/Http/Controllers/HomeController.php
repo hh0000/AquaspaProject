@@ -60,6 +60,10 @@ class HomeController extends Controller
         return view('admin.modificacionPaciente');
     }
 
+    public function ingresoVentas(){
+        return view('admin.ingresoVentas');
+    }
+
 
 
 

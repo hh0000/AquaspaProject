@@ -108,6 +108,14 @@ return [
     */
 
     'menu' => [
+        'INICIO',
+        [
+            'text' => 'Reserva de hora',
+            'url'  => 'home',
+            'icon' => 'address-card', 
+        ],
+
+
         'INGRESOS',
         [
             'text' => 'Ingreso Paciente',
@@ -203,5 +211,6 @@ return [
         'datatables' => true,
         'select2'    => true,
         'chartjs'    => true,
+        'fullcalendar' =>true,
     ],
 ];

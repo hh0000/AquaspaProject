@@ -13,6 +13,7 @@
         "jeroennoten/laravel-adminlte": "^1.25",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.8.*",
+        "maddhatter/laravel-fullcalendar": "^4.3.1",
         "laravel/tinker": "^1.0"
     },
     "require-dev": {

@@ -14,6 +14,11 @@ class ServicioController extends Controller
         return view('admin.verServicios',$datos);
     }
 
+    public function buscar(){
+        $data = Servicio::all();
+        return view('admin.ingresoVentas', compact('data'));
+    }
+
     public function index(){
 
     }

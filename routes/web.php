@@ -14,6 +14,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home','HomeController@index');
 
 Auth::routes();
 
@@ -62,7 +63,10 @@ Route::group(['prefix' => 'profesional'], function(){
 Route::get('/modificacionProfesional/{idProfesional}', 'ProfesionalController@modificacionProfesional')->name('modificacionProfesional');
 Route::put('/modificacionProf/{idProfesional}','ProfesionalController@modificacion')->name('profesional.modificacion');
 
-Route::get('/ingresoVentas/{idPaciente}',)
+Route::get('/ingresoVentas','HomeController@ingresoVentas')->name('ingresoVentas');
+Route::get('/ingresoVentas','ServicioController@buscar')->name('ingresoVentas');
+Route::get('/ingresoVentas/{idServicio}','ServicioController@buscar');
+
 
 
 

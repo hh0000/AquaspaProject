@@ -3,7 +3,7 @@
 @section('title', 'Aqua Spa - Web Control')
 
 @section('content_header')
-    <h1>Ingreso de pacientes al sistema</h1>
+    <h1>Ingreso de Ventas</h1>
     <h5>Por favor, rellene todos los campos</h5>
 @stop
 
@@ -13,32 +13,28 @@
 <div class="box box-info">
 
             <div class="box-header with-border">
-                          <h1 class="box-title">Datos Personales</h1>
+                          <h1 class="box-title">Datos del paciente</h1>
             </div>
 
             <div class="box-body">
-            <form action="/paciente/guardar" method="post">
+            <form action="" method="post">
             @csrf
             <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-md-4 col-sm-6 col-xs-12">
             <h4>Rut paciente:</h4>
             <div class="input-group input-group-md">
-                <input type="text" class="form-control" placeholder="Ingrese rut" name="rutPaciente" value="">
+                <input type="text" class="form-control" placeholder="Ingrese rut" name="rutPaciente" value="" >
                     <span class="input-group-btn">
                       <button type="button" class="btn btn-info btn-flat">Buscar</button>
                     </span>
             </div>
-            </div>          
-           
             </div>
-          
 
-            <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12">
             <h4>Nombre:</h4>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="text" class="form-control" placeholder="Ingrese nombre completo" name="nombrePaciente">
+                <input type="text" class="form-control" placeholder="Ingrese nombre completo" name="nombrePaciente" disabled value="">
             </div>
             </div>
 
@@ -46,72 +42,72 @@
             <h4>Teléfono:</h4>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                <input type="text" class="form-control" placeholder="Ingrese Teléfono" name="telefonoPaciente">
+                <input type="text" class="form-control" placeholder="Ingrese Teléfono" name="telefonoPaciente" disabled value="">
+            </div>
             </div>
             </div>
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Dirección:</h4>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-map-signs"></i></span>
-                <input type="text" class="form-control" placeholder="Ingrese dirección" name="direccionPaciente"> 
-            </div>
-            </div>
-            </div>
+
 
             <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Correo electrónico:</h4>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                <input type="email" class="form-control" placeholder="Ingrese email" name="emailPaciente">
-            </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Número emergencia:</h4>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-exclamation-triangle"></i></span>
-                <input type="text" class="form-control" placeholder="Ingrese Teléfono emergencia" name="tel_emergenciaPaciente">
-            </div>
-            </div>
-
-            
-
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Fecha nacimiento:</h4>
+            <h4>Fecha venta:</h4>
             <div class="input-group date">
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="date" class="form-control pull-right" name="fechaNacPaciente">
             </div>
             </div>
             </div>
+
             <br>
+
             <div class="row">
+                <div class="box-header with-border">
+                            <h1 class="box-title">Servicios</h1>
+                </div>
+
             <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Profesión:</h4>
+            <h4>Tipo de servicio:</h4>
             <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="text" class="form-control" placeholder="Ingrese profesión" name="profesionPaciente">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <select class="form-control" id="">
+                @foreach($data as $value)
+                <option value="{{$value->idServicio}}">{{$value->nombreServicio}}</option>
+                 @endforeach
+                </select>
             </div>
             </div>
-            
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+            <h4>Costo servicio:</h4>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>              
+                <input type="text" class="form-control" placeholder="Ingrese nombre completo" name="costoServicio" disabled value="{{ $value->minutosServicio }}">
+               
+            </div>
+            </div>
+    
+
+
+
+
+
             </div>
 
             <br>
 
             <div class="row">
              <div class="box-header with-border">
-                          <h1 class="box-title">Comentarios de inscripción:</h1>
+                          <h1 class="box-title">Comentarios de venta:</h1>
             </div>
             <br>
 
             <div class="form-group">
                   <div class="col-lg-8 col-sm-6 col-xs-12">
-                  <textarea class="form-control" rows="3" placeholder="Escriba sus comentarios referentes al paciente..." name="comentarios"></textarea>
+                  <textarea class="form-control" rows="3" placeholder="Escriba sus comentarios referentes a la venta.." name="comentarios"></textarea>
                   </div>
             </div>
-              <button class="btn btn-success btn-lg" type="submit">Ingresar paciente</button>
+              <button class="btn btn-success btn-lg" type="submit">Ingresar venta</button>
             </div>
 
             </form>
