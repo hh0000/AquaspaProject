@@ -3,8 +3,8 @@
 @section('title', 'Aqua Spa - Web Control')
 
 @section('content_header')
-    <h1>Ingreso de Ventas</h1>
-    <h5>Por favor, rellene todos los campos</h5>
+<h1>Ingreso de Ventas</h1>
+<h5>Por favor, rellene todos los campos</h5>
 @stop
 
 @section('content')
@@ -12,107 +12,186 @@
 
 <div class="box box-info">
 
-            <div class="box-header with-border">
-                          <h1 class="box-title">Datos del paciente</h1>
-            </div>
+    <div class="box-header with-border">
+        <h1 class="box-title">Datos del paciente</h1>
+    </div>
 
-            <div class="box-body">
-            <form action="" method="post">
+    <div class="box-body">
+        <form action="" method="post">
             @csrf
             <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Rut paciente:</h4>
-            <div class="input-group input-group-md">
-                <input type="text" class="form-control" placeholder="Ingrese rut" name="rutPaciente" value="" >
-                    <span class="input-group-btn">
-                      <button type="button" class="btn btn-info btn-flat">Buscar</button>
-                    </span>
-            </div>
-            </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Rut paciente:</h4>
+                    <div class="input-group input-group-md">
+                        <input type="text" class="form-control" placeholder="Ingrese rut" name="rutPaciente" value="">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-info btn-flat">Buscar</button>
+                        </span>
+                    </div>
+                </div>
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Nombre:</h4>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="text" class="form-control" placeholder="Ingrese nombre completo" name="nombrePaciente" disabled value="">
-            </div>
-            </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Nombre:</h4>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Ingrese nombre completo"
+                            name="nombrePaciente" disabled value="">
+                    </div>
+                </div>
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Teléfono:</h4>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                <input type="text" class="form-control" placeholder="Ingrese Teléfono" name="telefonoPaciente" disabled value="">
-            </div>
-            </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Teléfono:</h4>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                        <input type="text" class="form-control" placeholder="Ingrese Teléfono" name="telefonoPaciente"
+                            disabled value="">
+                    </div>
+                </div>
             </div>
 
 
 
             <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Fecha venta:</h4>
-            <div class="input-group date">
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                <input type="date" class="form-control pull-right" name="fechaNacPaciente">
-            </div>
-            </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Fecha venta:</h4>
+                    <div class="input-group date">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input type="date" class="form-control pull-right" name="fechaNacPaciente">
+                    </div>
+                </div>
             </div>
 
             <br>
 
             <div class="row">
                 <div class="box-header with-border">
-                            <h1 class="box-title">Servicios</h1>
+                    <h1 class="box-title">Servicios</h1>
                 </div>
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Tipo de servicio:</h4>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                <select class="form-control" id="">
-                @foreach($data as $value)
-                <option value="{{$value->idServicio}}">{{$value->nombreServicio}}</option>
-                 @endforeach
-                </select>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Tipo de servicio:</h4>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <select class="form-control" id="tipoServicio" name="tipoServicio">
+                            @foreach($data as $value)
+                            <option value="{{$value->idServicio}}" data-precio="{{$value->costoServicio}}">
+                                {{$value->nombreServicio}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Costo servicio:</h4>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Ingrese nombre completo"
+                            name="costoServicio" id="costoServicio" disabled>
+                    </div>
+                </div>
             </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            <h4>Costo servicio:</h4>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>              
-                <input type="text" class="form-control" placeholder="Ingrese nombre completo" name="costoServicio" disabled value="{{ $value->minutosServicio }}">
-               
-            </div>
-            </div>
-    
-
-
-
-
-
-            </div>
-
             <br>
 
             <div class="row">
-             <div class="box-header with-border">
-                          <h1 class="box-title">Comentarios de venta:</h1>
+                <div class="box-header with-border">
+                    <h1 class="box-title">Profesional</h1>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Profesional:</h4>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <select class="form-control" id="nombreProfesional" name="nombreProfesional">
+                            @foreach($data as $value)
+                            <option value="{{$value->idProfesional}}" data-telefono="{{$value->telefonoProfesional}}">
+                                {{$value->nombreProfesional}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Teléfono profesional:</h4>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Seleccione profesional"
+                            name="telefonoProfesional" id="telefonoProfesional" disabled>
+                    </div>
+                </div>
             </div>
             <br>
 
-            <div class="form-group">
-                  <div class="col-lg-8 col-sm-6 col-xs-12">
-                  <textarea class="form-control" rows="3" placeholder="Escriba sus comentarios referentes a la venta.." name="comentarios"></textarea>
-                  </div>
-            </div>
-              <button class="btn btn-success btn-lg" type="submit">Ingresar venta</button>
+            <div class="row">
+                <div class="box-header with-border">
+                    <h1 class="box-title">Datos de pago</h1>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Seleccione método pago:</h4>
+                    <div class="form-group ">
+                        <select class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                            <option data-select2-id="1">Efectivo</option>
+                            <option data-select2-id="2">Tarjeta débito</option>
+                            <option data-select2-id="3">Tarjeta crédito</option>
+                            <option data-select2-id="4">Transferencia</option>
+                            <option data-select2-id="5">Abono</option>
+                        </select>
+                        <span class="selection" style="width: 100%;">
+                            <span class="selection">
+                                <span class="selection" role="combobox" aria-haspopup="true" aria-expanded="false"
+                                    tabindex="0">
+                                    <span class="selection__arrow" role="presentation"><b
+                                            role="presentation"></b></span>
+                                </span>
+                            </span>
+                            <span class="dropdown-wrapper" aria-hidden="true">
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <h4>Número documento:</h4>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" placeholder="Ingrese número de operación"
+                        name="numeroDocumento" id="numeroDocumento">
+                </div>
             </div>
 
-            </form>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <h4>Total a pagar:</h4>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" placeholder="Total a cancelar" name="costoServicio"
+                        id="costoServicio" disabled>
+                </div>
             </div>
-            <br>
+
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="box-header with-border">
+            <h1 class="box-title">Comentarios de venta:</h1>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <div class="col-lg-8 col-sm-6 col-xs-12">
+                <textarea class="form-control" rows="3" placeholder="Escriba sus comentarios referentes a la venta.."
+                    name="comentarios"></textarea>
+            </div>
+        </div>
+        <button class="btn btn-success btn-lg" type="submit">Ingresar venta</button>
+    </div>
+
+    </form>
+</div>
+<br>
 </div>
 
 
@@ -132,5 +211,30 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#costoServicio").val($("#tipoServicio option:selected").attr("data-precio"));
+});
+$("#tipoServicio").on("change", function() {
+    $("#costoServicio").val($("#tipoServicio option:selected").attr("data-precio"));
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#telefonoProfesional").val($("#nombreProfesional option:selected").attr("data-telefono"));
+});
+$("#nombreProfesional").on("change", function() {
+    $("#telefonoProfesional").val($("#nombreProfesional option:selected").attr("data-telefono"));
+});
+</script>
+
+
+
+
+
 
 @stop

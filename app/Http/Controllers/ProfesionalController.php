@@ -15,6 +15,11 @@ class ProfesionalController extends Controller
         return view('admin.verProfesional',$datos);
     }
 
+    public function buscar(){
+        $data = Profesional::all();
+        return view('admin.ingresoVentas', compact('data'));
+    }
+
     public function index(){
 
     }
