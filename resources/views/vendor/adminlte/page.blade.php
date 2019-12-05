@@ -1,8 +1,10 @@
 @extends('adminlte::master')
 
 @section('adminlte_css')
-    <link rel="stylesheet"
-          href="{{ asset('vendor/adminlte/dist/css/skins/skin-' . config('adminlte.skin', 'blue') . '.min.css')}} ">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/skins/skin-' . config('adminlte.skin', 'blue') . '.min.css')}} ">
+
+    <link rel='stylesheet' href="{{ asset('css/maincore.css') }}"  />
+    <link rel='stylesheet' href="{{ asset('css/maindaygrid.css') }}"  />
     @stack('css')
     @yield('css')
 @stop
@@ -41,17 +43,19 @@
             <!-- Logo -->
             <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">{!! config('adminlte.logo_mini', '<b>A</b>LT') !!}</span>
+                <span class="logo-mini">{!! config('adminlte.logo_mini', '<b>A</b>QS') !!}</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</span>
+                <span class="logo-lg">{!! config('adminlte.logo', '<b>Aqua</b>SPA') !!}</span>
             </a>
 
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
+            @if(Auth::user()->isAdmin == true)
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                     <span class="sr-only">{{ trans('adminlte::adminlte.toggle_navigation') }}</span>
                 </a>
+            @endif
             @endif
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
@@ -83,9 +87,10 @@
                 @endif
             </nav>
         </header>
-
+        @if(Auth::user()->isAdmin == true)
         @if(config('adminlte.layout') != 'top-nav')
         <!-- Left side column. contains the logo and sidebar -->
+        
         <aside class="main-sidebar">
 
             <!-- sidebar: style can be found in sidebar.less -->
@@ -100,6 +105,7 @@
             <!-- /.sidebar -->
         </aside>
         @endif
+        @endif  
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -127,11 +133,41 @@
         <!-- /.content-wrapper -->
 
     </div>
+
+    
     <!-- ./wrapper -->
 @stop
 
 @section('adminlte_js')
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ asset('plugins/fullcalendar/packages/core/main.js') }}"></script>
+    <script src="{{ asset('plugins/fullcalendar/packages/interaction/main.js') }}"></script>
+    <script src="{{ asset('plugins/fullcalendar/packages/daygrid/main.js') }}"></script>
+    <script src="{{ asset('plugins/fullcalendar/packages/list/main.js') }}"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          plugins: [ 'interaction', 'dayGrid', 'list' ],
+          defaultView: 'dayGridMonth',
+          selectable: true,
+
+          header: {
+          center: 'title',
+          right: 'prev,next today, dayGridMonth,timeGridWeek,timeGridDay',
+    },
+    dateClick: function(info) {
+      alert('clicked ' + info.dateStr);
+    },
+    select: function(info) {
+      alert('selected ' + info.startStr + ' to ' + info.endStr);
+    }
+        });
+
+        calendar.render();
+      });
+    </script>
     @stack('js')
     @yield('js')
 @stop

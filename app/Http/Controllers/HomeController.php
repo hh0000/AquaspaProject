@@ -64,13 +64,6 @@ class HomeController extends Controller
         return view('admin.ingresoVentas');
     }
 
-
-
-
-
-
-    
-
     public function ingresoPlanes(){
         return view('admin.ingresoPlanes');
     }

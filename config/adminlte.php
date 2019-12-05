@@ -108,13 +108,13 @@ return [
     */
 
     'menu' => [
+
         'INICIO',
         [
-            'text' => 'Reserva de hora',
+            'text' => 'Reserva de horas',
             'url'  => 'home',
-            'icon' => 'address-card', 
+            'icon' => 'address-card',
         ],
-
 
         'INGRESOS',
         [
@@ -142,8 +142,6 @@ return [
             'icon' => 'file',
         ],
 
-
-
         'REPORTES',
         [
             'text' => 'Ver Pacientes',
@@ -156,13 +154,13 @@ return [
             'url'  => 'verServicios',
             'icon' => 'money',            
         ],
+
         [
             'text' => 'Ver Profesional',
             'url'  => 'verProfesional',
             'icon' => 'archive',
             
         ],
-              
         
         'AJUSTES DE CUENTA',      
         [
@@ -171,9 +169,6 @@ return [
             'icon'        => 'envelope',
             'label_color' => 'success',
         ],
-      
-       
-        
     ],
 
     /*
@@ -211,6 +206,6 @@ return [
         'datatables' => true,
         'select2'    => true,
         'chartjs'    => true,
-        'fullcalendar' =>true,
+        'fullcalendar' => true,
     ],
 ];

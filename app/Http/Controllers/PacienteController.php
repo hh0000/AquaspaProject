@@ -32,7 +32,7 @@ class PacienteController extends Controller
             'tel_emergenciaPaciente'=>'required | numeric',
             'telefonoPaciente'=>'required | numeric',
             'direccionPaciente'=>'required',
-            'comentarios'=>'required | max:1000'
+            'comentarios'=>'max:1000'
         ]);
 
         $datos = $request->all();
@@ -77,7 +77,6 @@ class PacienteController extends Controller
     public function eliminar($idPaciente){
         $data = Paciente::find($idPaciente);
         $data->delete();
-        return redirect("/verPaciente")->with('mensaje','Paciente eliminado con exito!');           
-
+        return redirect("/verPaciente")->with('mensaje','Paciente eliminado con exito!');
     }
 }

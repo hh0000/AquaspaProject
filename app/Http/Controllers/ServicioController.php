@@ -29,7 +29,7 @@ class ServicioController extends Controller
             'nombreServicio' => 'required',
             'minutosServicio' => 'required | numeric',
             'costoServicio' => 'required | numeric',
-            'descripcion' => 'required | max: 1000'
+            'descripcion' => 'max: 1000'
         ]);
 
         $datos = $request->all();
