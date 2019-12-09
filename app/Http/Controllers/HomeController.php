@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Venta;
+use App\Servicio;
+use App\Evento;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -26,7 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $servicios = Servicio::all();
+        return view('home', compact("servicios"));
+        
     }
 
     //ingresos
@@ -68,20 +72,48 @@ class HomeController extends Controller
         return view('admin.ingresoPlanes');
     }
 
-   
+    public function guardarServicio(Request $request){
+        $id = $request->input("id");
+        $fechainicio = \DateTime::createFromFormat('d/m/Y H:i:s',  $request->input("fechainicio"));
+        $fechatermino = ($request->input("fechatermino")!= NULL) ? \DateTime::createFromFormat('j/m/Y G:i:s', $request->input("fechatermino")) : \DateTime::createFromFormat('d/m/Y H:i:s',  $request->input("fechainicio"));
+
+        $evento = new Evento();
+        $evento->idservicio = $id;
+        $evento->fechainicio = $fechainicio;
+        $evento->fechatermino = $fechatermino;
+        $evento->save();
+
+        return json_encode($evento);
+    }
+
+    public function leerEvento(Request $request){
+        $evento = Evento::all();
+        $arr = array();
+        foreach ($evento as $evt) {
+            $et = new \stdClass();
+            $et->title = $evt->servicio->nombreServicio;
+            $et->start = $evt->fechainicio->toString();
+            $et->end = $evt->fechatermino;
+            array_push($arr, $et);
+        }
+        return json_encode($arr);
+    }
+
+
+
+
+
+
+
+
 
     
-
-
-
-   
-
 public function test(){
     //SE PASAN TODOS LOS DATOS DE LA TABLA PRODUCTOS A LA VISTA MEDIANTE LA VARIABLE DATOS
     $data = Producto::all();
     $datos = array("productos"=>$data);
- return view('admin.reporteProductos',$datos);
  
+    return view('admin.reporteProductos',$datos);
 }
 
 public function ventas(){

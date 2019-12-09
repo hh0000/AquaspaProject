@@ -5,6 +5,9 @@
 
     <link rel='stylesheet' href="{{ asset('css/maincore.css') }}"  />
     <link rel='stylesheet' href="{{ asset('css/maindaygrid.css') }}"  />
+    <link rel='stylesheet' href="{{ asset('css/maintimegrid.css') }}"  />
+    <link rel='stylesheet' href="{{ asset('css/mainlist.css') }}"  />
+    
     @stack('css')
     @yield('css')
 @stop
@@ -16,6 +19,7 @@
 ][config('adminlte.layout')] : '') . (config('adminlte.collapse_sidebar') ? ' sidebar-collapse ' : ''))
 
 @section('body')
+
     <div class="wrapper">
 
         <!-- Main Header -->
@@ -25,7 +29,7 @@
                 <div class="container">
                     <div class="navbar-header">
                         <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}" class="navbar-brand">
-                            {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
+                            {!! config('adminlte.logo', '<b>Aqua</b>Spa') !!}
                         </a>
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                             <i class="fa fa-bars"></i>
@@ -50,12 +54,11 @@
 
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
-            @if(Auth::user()->isAdmin == true)
+            
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                     <span class="sr-only">{{ trans('adminlte::adminlte.toggle_navigation') }}</span>
                 </a>
-            @endif
             @endif
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
@@ -87,7 +90,7 @@
                 @endif
             </nav>
         </header>
-        @if(Auth::user()->isAdmin == true)
+        
         @if(config('adminlte.layout') != 'top-nav')
         <!-- Left side column. contains the logo and sidebar -->
         
@@ -95,16 +98,17 @@
 
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
-
+            @if(Auth::user()->isAdmin == true)
                 <!-- Sidebar Menu -->
                 <ul class="sidebar-menu" data-widget="tree">
                     @each('adminlte::partials.menu-item', $adminlte->menu(), 'item')
                 </ul>
                 <!-- /.sidebar-menu -->
+            @endif
             </section>
             <!-- /.sidebar -->
         </aside>
-        @endif
+        
         @endif  
 
         <!-- Content Wrapper. Contains page content -->
@@ -139,35 +143,15 @@
 @stop
 
 @section('adminlte_js')
+
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
     <script src="{{ asset('plugins/fullcalendar/packages/core/main.js') }}"></script>
-    <script src="{{ asset('plugins/fullcalendar/packages/interaction/main.js') }}"></script>
     <script src="{{ asset('plugins/fullcalendar/packages/daygrid/main.js') }}"></script>
     <script src="{{ asset('plugins/fullcalendar/packages/list/main.js') }}"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          plugins: [ 'interaction', 'dayGrid', 'list' ],
-          defaultView: 'dayGridMonth',
-          selectable: true,
-
-          header: {
-          center: 'title',
-          right: 'prev,next today, dayGridMonth,timeGridWeek,timeGridDay',
-    },
-    dateClick: function(info) {
-      alert('clicked ' + info.dateStr);
-    },
-    select: function(info) {
-      alert('selected ' + info.startStr + ' to ' + info.endStr);
-    }
-        });
-
-        calendar.render();
-      });
-    </script>
+    <script src="{{ asset('plugins/fullcalendar/packages/timegrid/main.js') }}"></script>
+    <script src="{{ asset('plugins/fullcalendar/packages/interaction/main.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    
     @stack('js')
     @yield('js')
 @stop

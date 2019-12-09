@@ -29,15 +29,20 @@ Route::group(['prefix' => 'paciente'], function(){
         'as'   => 'eliminarPaciente'
     ]);
 });
+
 Route::get('/modificacionPaciente/{idPaciente}', 'PacienteController@modificacionPaciente')->name('modificacionPaciente');
 Route::put('/modificacion/{idPaciente}','PacienteController@modificacion')->name('paciente.modificacion');
-
-
 
 Route::get('/ingresoServicios', 'HomeController@ingresoServicios')->name('ingresoServicios');
 Route::post('/servicio/guardar', 'ServicioController@guardar');
 Route::get('/verServicios', 'HomeController@verServicios')->name('verServicios');
 Route::get('/verServicios', 'ServicioController@verServicios');
+
+//Eventos
+Route::post('/guardarServicio', 'HomeController@guardarServicio')->name('guardarServicio');
+Route::get('/leerEvento', 'HomeController@leerEvento')->name('leerEvento');
+//FinEventos
+
 Route::group(['prefix' => 'servicio'], function(){
     Route::resource('servicio','ServicioController');
     Route::get('verServicio/{idServicio}',[
@@ -47,7 +52,6 @@ Route::group(['prefix' => 'servicio'], function(){
 });
 Route::get('/modificacionServicio/{idServicio}', 'ServicioController@modificacionServicio')->name('modificacionServicio');
 Route::put('/modificacionServi/{idServicio}','ServicioController@modificacion')->name('servicio.modificacion');
-
 
 Route::get('/ingresoProfesional', 'HomeController@ingresoProfesional')->name('ingresoProfesional');
 Route::post('/profesional/guardar', 'ProfesionalController@guardar');
