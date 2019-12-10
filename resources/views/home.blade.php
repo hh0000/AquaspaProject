@@ -4,11 +4,11 @@
 
 @if(Auth::user()->isAdmin == true)
 @section('content_header')
-    <h1>Menú Admin</h1>
+    <h1>Panel de administración</h1>
 @stop
 @else
 @section('content_header')
-    <h1>Menú Clientes</h1>
+    <h1>Panel de clientes</h1>
 @stop
 @endif
 
@@ -128,7 +128,7 @@
                 });
               }
             },
-            eventResizeStop:   function( info ) {
+            eventResizeStop: function( info ) {
                   console.log("*************************");
                   console.log(info);
                   console.log(info.event.end.toLocaleString() );
@@ -142,7 +142,7 @@
                     "_token": "{{ csrf_token() }}",
                     "id": info.event.extendedProps.idservicio,
                     "fechainicio":  info.event.start.toLocaleString(),
-                    "fechatermino":  (info.event.end != null)? info.event.end.toLocaleString() : "",
+                    "fechatermino":  (info.event.end != null) ? info.event.end.toLocaleString() : "",
                 },
                 success: function(response){
                 console.log(response);

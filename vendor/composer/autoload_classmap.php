@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\DetalleVenta' => $baseDir . '/app/DetalleVenta.php',
+    'App\\Evento' => $baseDir . '/app/Evento.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -27,6 +28,7 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Http\\Middleware\\isAdmin' => $baseDir . '/app/Http/Middleware/isAdmin.php',
     'App\\Paciente' => $baseDir . '/app/Paciente.php',
     'App\\Producto' => $baseDir . '/app/Producto.php',
     'App\\Profesional' => $baseDir . '/app/Profesional.php',
@@ -52,6 +54,7 @@ return array(
     'Carbon\\Exceptions\\BadUnitException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/BadUnitException.php',
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
     'Carbon\\Exceptions\\NotAPeriodException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/NotAPeriodException.php',
+    'Carbon\\Exceptions\\ParseErrorException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/ParseErrorException.php',
     'Carbon\\Factory' => $vendorDir . '/nesbot/carbon/src/Carbon/Factory.php',
     'Carbon\\FactoryImmutable' => $vendorDir . '/nesbot/carbon/src/Carbon/FactoryImmutable.php',
     'Carbon\\Language' => $vendorDir . '/nesbot/carbon/src/Carbon/Language.php',

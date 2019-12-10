@@ -9,9 +9,7 @@
 
 @section('content')
 
-
 <div class="box box-info">
-
     <div class="box-header with-border">
         <h1 class="box-title">Datos del paciente</h1>
     </div>
@@ -22,11 +20,14 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <h4>Rut paciente:</h4>
-                    <div class="input-group input-group-md">
-                        <input type="text" class="form-control" placeholder="Ingrese rut" name="rutPaciente" value="">
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-info btn-flat">Buscar</button>
-                        </span>
+                    <div class="form-group">
+                    
+                    <select class="js-example-basic-single" style="width: 100%;" name="rutPaciente" tabindex="-1" aria-hidden="true" id="rutPaciente">
+                        @foreach($pacientes as $value)
+                        <option value="{{$value->rutPaciente}}" data-paciente="{{$value->nombrePaciente}}" data-telefono="{{$value->telefonoPaciente}}">
+                        {{$value->rutPaciente}}</option>
+                        @endforeach
+                    </select>
                     </div>
                 </div>
 
@@ -34,8 +35,8 @@
                     <h4>Nombre:</h4>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" placeholder="Ingrese nombre completo"
-                            name="nombrePaciente" disabled value="">
+                        <input type="text" class="form-control" 
+                            name="nombrePaciente" id="nombrePaciente" disabled>
                     </div>
                 </div>
 
@@ -43,8 +44,8 @@
                     <h4>Teléfono:</h4>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                        <input type="text" class="form-control" placeholder="Ingrese Teléfono" name="telefonoPaciente"
-                            disabled value="">
+                        <input type="text" class="form-control" name="telefonoPaciente"
+                        id="telefonoPaciente"    disabled>
                     </div>
                 </div>
             </div>
@@ -56,7 +57,7 @@
                     <h4>Fecha venta:</h4>
                     <div class="input-group date">
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        <input type="date" class="form-control pull-right" name="fechaNacPaciente">
+                        <input type="date" class="form-control pull-right" name="fechaVenta">
                     </div>
                 </div>
             </div>
@@ -73,7 +74,7 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                         <select class="form-control" id="tipoServicio" name="tipoServicio">
-                            @foreach($data as $value)
+                            @foreach($servicios as $value)
                             <option value="{{$value->idServicio}}" data-precio="{{$value->costoServicio}}">
                                 {{$value->nombreServicio}}</option>
                             @endforeach
@@ -102,7 +103,7 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                         <select class="form-control" id="nombreProfesional" name="nombreProfesional">
-                            @foreach($data as $value)
+                            @foreach($profesionales as $value)
                             <option value="{{$value->idProfesional}}" data-telefono="{{$value->telefonoProfesional}}">
                                 {{$value->nombreProfesional}}</option>
                             @endforeach
@@ -149,49 +150,49 @@
                         </span>
                     </div>
                 </div>
-            
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <h4>Número documento:</h4>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input type="text" class="form-control" placeholder="Ingrese número de operación"
-                        name="numeroDocumento" id="numeroDocumento">
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Número documento:</h4>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Ingrese número de operación"
+                            name="numeroDocumento" id="numeroDocumento">
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <h4>Total a pagar:</h4>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input type="text" class="form-control" placeholder="Total a cancelar" name="costoServicio"
-                        id="costoServicio" disabled>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h4>Total a pagar:</h4>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Total a cancelar" name="costoServicio"
+                            id="costoServicio" disabled>
+                    </div>
                 </div>
+
+
             </div>
 
 
-    </div>
 
+            <div class="row">
+                <div class="box-header with-border">
+                    <h1 class="box-title">Comentarios de venta:</h1>
+                </div>
+                <br>
 
-
-    <div class="row">
-        <div class="box-header with-border">
-            <h1 class="box-title">Comentarios de venta:</h1>
-        </div>
-        <br>
-
-        <div class="form-group">
-            <div class="col-lg-8 col-sm-6 col-xs-12">
-                <textarea class="form-control" rows="3" placeholder="Escriba sus comentarios referentes a la venta.."
-                    name="comentarios"></textarea>
+                <div class="form-group">
+                    <div class="col-lg-8 col-sm-6 col-xs-12">
+                        <textarea class="form-control" rows="3"
+                            placeholder="Escriba sus comentarios referentes a la venta.." name="comentarios"></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-success btn-lg" type="submit">Ingresar venta</button>
             </div>
-        </div>
-        <button class="btn btn-success btn-lg" type="submit">Ingresar venta</button>
-    </div>
 
-    </form>
-</div>
-<br>
+        </form>
+    </div>
+    <br>
 </div>
 
 
@@ -201,6 +202,7 @@
 
 @section('css')
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
 @stop
 
 @section('js')
@@ -212,29 +214,34 @@
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+
 
 
 <script type="text/javascript">
 $(document).ready(function() {
     $("#costoServicio").val($("#tipoServicio option:selected").attr("data-precio"));
+    $("#telefonoProfesional").val($("#nombreProfesional option:selected").attr("data-telefono"));
+    $("#nombrePaciente").val($("#rutPaciente option:selected").attr("data-paciente"));
+    $("#telefonoPaciente").val($("#rutPaciente option:selected").attr("data-paciente"));
+    $('.js-example-basic-multiple').select2();
+    $('.js-example-basic-single').select2();
 });
 $("#tipoServicio").on("change", function() {
     $("#costoServicio").val($("#tipoServicio option:selected").attr("data-precio"));
 });
-</script>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    $("#telefonoProfesional").val($("#nombreProfesional option:selected").attr("data-telefono"));
-});
 $("#nombreProfesional").on("change", function() {
     $("#telefonoProfesional").val($("#nombreProfesional option:selected").attr("data-telefono"));
 });
+
+$("#rutPaciente").on("change", function() {
+    $("#nombrePaciente").val($("#rutPaciente option:selected").attr("data-paciente"));
+});
+
+$("#rutPaciente").on("change", function() {
+    $("#telefonoPaciente").val($("#rutPaciente option:selected").attr("data-telefono"));
+});
 </script>
-
-
-
-
-
 
 @stop

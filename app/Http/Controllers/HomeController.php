@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Venta;
+use App\Profesional;
 use App\Servicio;
+use App\Paciente;
 use App\Evento;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -30,7 +33,6 @@ class HomeController extends Controller
     {
         $servicios = Servicio::all();
         return view('home', compact("servicios"));
-        
     }
 
     //ingresos
@@ -46,7 +48,6 @@ class HomeController extends Controller
         return view('admin.ingresoProfesional');
     }
 
-
     //reportes
     public function verServicios(){
         return view('admin.verServicios');
@@ -60,21 +61,25 @@ class HomeController extends Controller
         return view('admin.verProfesional');
     }
 
+    //editar
     public function modificacionPaciente(){
         return view('admin.modificacionPaciente');
-    }
-
-    public function ingresoVentas(){
-        return view('admin.ingresoVentas');
     }
 
     public function ingresoPlanes(){
         return view('admin.ingresoPlanes');
     }
 
+    public function ingresoVentas(){
+        $profesionales = Profesional::all();
+        $servicios = Servicio::all();
+        $pacientes = Paciente::all();
+        return view('admin.ingresoVentas', compact('profesionales', 'servicios', 'pacientes'));
+    }
+
     public function guardarServicio(Request $request){
         $id = $request->input("id");
-        $fechainicio = \DateTime::createFromFormat('d/m/Y H:i:s',  $request->input("fechainicio"));
+        $fechainicio = \DateTime::createFromFormat('d/m/Y H:i:s', $request->input("fechainicio"));
         $fechatermino = ($request->input("fechatermino")!= NULL) ? \DateTime::createFromFormat('j/m/Y G:i:s', $request->input("fechatermino")) : \DateTime::createFromFormat('d/m/Y H:i:s',  $request->input("fechainicio"));
 
         $evento = new Evento();
@@ -89,13 +94,15 @@ class HomeController extends Controller
     public function leerEvento(Request $request){
         $evento = Evento::all();
         $arr = array();
+
         foreach ($evento as $evt) {
             $et = new \stdClass();
             $et->title = $evt->servicio->nombreServicio;
-            $et->start = $evt->fechainicio->toString();
-            $et->end = $evt->fechatermino;
+            $et->start = Carbon::parse($evt->fechainicio);
+            $et->end = Carbon::parse($evt->fechatermino);
             array_push($arr, $et);
         }
+
         return json_encode($arr);
     }
 

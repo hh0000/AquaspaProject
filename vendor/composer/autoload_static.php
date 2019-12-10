@@ -399,6 +399,7 @@ class ComposerStaticInit374fd5bb574d545788a43b014221b525
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\DetalleVenta' => __DIR__ . '/../..' . '/app/DetalleVenta.php',
+        'App\\Evento' => __DIR__ . '/../..' . '/app/Evento.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -418,6 +419,7 @@ class ComposerStaticInit374fd5bb574d545788a43b014221b525
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Middleware\\isAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/isAdmin.php',
         'App\\Paciente' => __DIR__ . '/../..' . '/app/Paciente.php',
         'App\\Producto' => __DIR__ . '/../..' . '/app/Producto.php',
         'App\\Profesional' => __DIR__ . '/../..' . '/app/Profesional.php',
@@ -443,6 +445,7 @@ class ComposerStaticInit374fd5bb574d545788a43b014221b525
         'Carbon\\Exceptions\\BadUnitException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/BadUnitException.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Exceptions\\NotAPeriodException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/NotAPeriodException.php',
+        'Carbon\\Exceptions\\ParseErrorException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/ParseErrorException.php',
         'Carbon\\Factory' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Factory.php',
         'Carbon\\FactoryImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/FactoryImmutable.php',
         'Carbon\\Language' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Language.php',

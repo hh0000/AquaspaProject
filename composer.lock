@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "260533bd4e64e11f1eaa2991bc886a9b",
+    "content-hash": "506eb79835d3218f3c7462d123ed6702",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -871,53 +871,6 @@
             "time": "2019-10-16T21:01:05+00:00"
         },
         {
-            "name": "maddhatter/laravel-fullcalendar",
-            "version": "v1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/maddhatter/laravel-fullcalendar.git",
-                "reference": "6502ee3eee2d506d58fa37864af8f2003c9aaca1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/maddhatter/laravel-fullcalendar/zipball/6502ee3eee2d506d58fa37864af8f2003c9aaca1",
-                "reference": "6502ee3eee2d506d58fa37864af8f2003c9aaca1",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "MaddHatter\\LaravelFullcalendar\\ServiceProvider"
-                    ],
-                    "aliases": {
-                        "Calendar": "MaddHatter\\LaravelFullcalendar\\Facades\\Calendar"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "MaddHatter\\LaravelFullcalendar": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Shawn Tunney",
-                    "email": "shawn.tunney@gmail.com"
-                }
-            ],
-            "description": "Laravel helper for FullCalendar.io",
-            "time": "2017-09-18T17:54:18+00:00"
-        },
-        {
             "name": "monolog/monolog",
             "version": "1.25.1",
             "source": {
@@ -997,22 +950,22 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.26.0",
+            "version": "2.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "e01ecc0b71168febb52ae1fdc1cfcc95428e604e"
+                "reference": "13b8485a8690f103bf19cba64879c218b102b726"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e01ecc0b71168febb52ae1fdc1cfcc95428e604e",
-                "reference": "e01ecc0b71168febb52ae1fdc1cfcc95428e604e",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/13b8485a8690f103bf19cba64879c218b102b726",
+                "reference": "13b8485a8690f103bf19cba64879c218b102b726",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "php": "^7.1.8 || ^8.0",
-                "symfony/translation": "^3.4 || ^4.0"
+                "symfony/translation": "^3.4 || ^4.0 || ^5.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
@@ -1027,6 +980,9 @@
             ],
             "type": "library",
             "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                },
                 "laravel": {
                     "providers": [
                         "Carbon\\Laravel\\ServiceProvider"
@@ -1060,7 +1016,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-10-21T21:32:25+00:00"
+            "time": "2019-11-20T06:59:06+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3325,6 +3281,53 @@
                 "test"
             ],
             "time": "2016-01-20T08:20:44+00:00"
+        },
+        {
+            "name": "maddhatter/laravel-fullcalendar",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maddhatter/laravel-fullcalendar.git",
+                "reference": "6502ee3eee2d506d58fa37864af8f2003c9aaca1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maddhatter/laravel-fullcalendar/zipball/6502ee3eee2d506d58fa37864af8f2003c9aaca1",
+                "reference": "6502ee3eee2d506d58fa37864af8f2003c9aaca1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MaddHatter\\LaravelFullcalendar\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Calendar": "MaddHatter\\LaravelFullcalendar\\Facades\\Calendar"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "MaddHatter\\LaravelFullcalendar": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shawn Tunney",
+                    "email": "shawn.tunney@gmail.com"
+                }
+            ],
+            "description": "Laravel helper for FullCalendar.io",
+            "time": "2017-09-18T17:54:18+00:00"
         },
         {
             "name": "mockery/mockery",
