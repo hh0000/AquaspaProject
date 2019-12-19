@@ -68,11 +68,20 @@ Route::get('/modificacionProfesional/{idProfesional}', 'ProfesionalController@mo
 Route::put('/modificacionProf/{idProfesional}','ProfesionalController@modificacion')->name('profesional.modificacion');
 
 Route::get('/ingresoVentas','HomeController@ingresoVentas')->name('ingresoVentas');
-//Route::get('/ingresoVentas','ServicioController@buscar')->name('ingresoVentas');
-//Route::get('/ingresoVentas','ProfesionalController@buscar')->name('ingresoVentas');
+Route::post('/venta/guardar', 'VentaController@guardar');
 Route::get('/ingresoVentas/{idServicio}','ServicioController@buscar');
 Route::get('/ingresoVentas/{idProfesional}','ProfesionalController@buscar');
 Route::get('/ingresoVentas/{idPaciente}','PacienteController@buscar');
+Route::get('/verVentas','HomeController@verVentas')->name('verVentas');
+Route::get('/verVentas','VentaController@verVentas');
+
+
+
+
+
+
+//Route::get('/ingresoVentas','ServicioController@buscar')->name('ingresoVentas');
+//Route::get('/ingresoVentas','ProfesionalController@buscar')->name('ingresoVentas');
 
 //Route::get('/ingresoPlanes', 'HomeController@ingresoPlanes')->name('ingresoPlanes');
 //Route::post('/plan/guardar', 'PlanController@guardar');

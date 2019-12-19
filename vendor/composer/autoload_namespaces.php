@@ -6,9 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src'),
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
-    'MaddHatter\\LaravelFullcalendar' => array($vendorDir . '/maddhatter/laravel-fullcalendar/src'),
     'Laracasts\\Flash' => array($vendorDir . '/laracasts/flash/src'),
 );

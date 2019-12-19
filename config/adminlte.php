@@ -144,6 +144,14 @@ return [
 
         'REPORTES',
         [
+            'text' => 'Ver Ventas',
+            'url'  => 'verVentas',
+            'icon' => 'file',
+
+        ],
+
+
+        [
             'text' => 'Ver Pacientes',
             'url'  => 'verPaciente',
             'icon' => 'file',

@@ -7,6 +7,7 @@
     <link rel='stylesheet' href="{{ asset('css/maindaygrid.css') }}"  />
     <link rel='stylesheet' href="{{ asset('css/maintimegrid.css') }}"  />
     <link rel='stylesheet' href="{{ asset('css/mainlist.css') }}"  />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
     
     @stack('css')
     @yield('css')
@@ -150,7 +151,10 @@
     <script src="{{ asset('plugins/fullcalendar/packages/list/main.js') }}"></script>
     <script src="{{ asset('plugins/fullcalendar/packages/timegrid/main.js') }}"></script>
     <script src="{{ asset('plugins/fullcalendar/packages/interaction/main.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.js"></script>-->
     
     @stack('js')
     @yield('js')

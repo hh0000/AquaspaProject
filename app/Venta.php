@@ -7,13 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Venta extends Model
 {
     protected $table = 'venta';
-    protected $primaryKey = 'cod_venta';
-
+    protected $primaryKey = 'idVenta';
     public $timestamps = false;
 
-public function detalles(){
-    return $this->hasMany('App\DetalleVenta', 'cod_venta','cod_venta');
-
-}
+    protected $fillable = ['idVenta','rutPaciente','nombrePaciente','telefonoPaciente','fechaVenta','nombreServicio','costoServicio','nombreProfesional','telefonoProfesional','metodoPago','numeroDocumento','total','comentarios'];
 
 }
